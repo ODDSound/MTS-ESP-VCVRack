@@ -423,6 +423,19 @@
          d="m 0.144531,0.824219 h 16.25 v 15.097656 h -16.25 z m 0,0"
          id="path5169" />
     </clipPath>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter3328"
+       x="-0.0010650921"
+       width="1.0021302"
+       y="-0.0097294484"
+       height="1.0194589">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.012287743"
+         id="feGaussianBlur3330" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -432,8 +445,8 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="-80.680981"
-     inkscape:cy="261.764"
+     inkscape:cx="-151.18386"
+     inkscape:cy="235.96612"
      inkscape:document-units="mm"
      inkscape:current-layer="layer3"
      showgrid="false"
@@ -465,9 +478,10 @@
   <g
      inkscape:groupmode="layer"
      id="layer5"
-     inkscape:label="bg">
+     inkscape:label="bg"
+     style="display:inline">
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.774899"
+       style="fill:#090b0d;fill-opacity:1;stroke-width:0.774899"
        id="rect1426"
        width="40.632439"
        height="128.5119"
@@ -482,7 +496,7 @@
      inkscape:label="ports"
      style="display:inline">
     <rect
-       style="fill:#000000;fill-opacity:1;stroke-width:0.266946"
+       style="fill:#8aaec5;fill-opacity:1;stroke-width:0.266946"
        id="rect1126"
        width="9.6591415"
        height="14.026572"
@@ -490,7 +504,7 @@
        y="55.509888"
        ry="1.1339285" />
     <rect
-       style="fill:#000000;fill-opacity:1;stroke-width:0.266946"
+       style="fill:#8aaec5;fill-opacity:1;stroke-width:0.266946"
        id="rect1126-3"
        width="9.6591415"
        height="14.026572"
@@ -499,7 +513,7 @@
        ry="1.1339285"
        rx="1.1339285" />
     <rect
-       style="fill:#000000;fill-opacity:1;stroke-width:0.266946"
+       style="fill:#8aaec5;fill-opacity:1;stroke-width:0.266946"
        id="rect1126-3-5"
        width="9.6591415"
        height="14.026572"
@@ -508,7 +522,7 @@
        ry="1.1339285"
        rx="1.1339285" />
     <rect
-       style="fill:#000000;fill-opacity:1;stroke-width:0.266946"
+       style="fill:#8aaec5;fill-opacity:1;stroke-width:0.266946"
        id="rect1126-3-2"
        width="9.6591415"
        height="14.026572"
@@ -517,7 +531,7 @@
        ry="1.1339285"
        rx="1.1339285" />
     <rect
-       style="fill:#000000;fill-opacity:1;stroke-width:0.266946"
+       style="fill:#8aaec5;fill-opacity:1;stroke-width:0.266946"
        id="rect1126-3-7"
        width="9.6591415"
        height="14.026572"
@@ -526,7 +540,7 @@
        ry="1.1339285"
        rx="1.1339285" />
     <rect
-       style="fill:#000000;fill-opacity:1;stroke-width:0.266946"
+       style="fill:#8aaec5;fill-opacity:1;stroke-width:0.266946"
        id="rect1126-3-0"
        width="9.6591415"
        height="14.026572"
@@ -535,7 +549,7 @@
        ry="1.1339285"
        rx="1.1339285" />
     <rect
-       style="fill:#000000;fill-opacity:1;stroke-width:0.266946"
+       style="fill:#8aaec5;fill-opacity:1;stroke-width:0.266946"
        id="rect1126-3-1"
        width="9.6591415"
        height="14.026572"
@@ -544,7 +558,7 @@
        ry="1.1339285"
        rx="1.1339285" />
     <rect
-       style="fill:#000000;fill-opacity:1;stroke-width:0.266946"
+       style="fill:#8aaec5;fill-opacity:1;stroke-width:0.266946"
        id="rect1126-3-4"
        width="9.6591415"
        height="14.026572"
@@ -553,7 +567,7 @@
        ry="1.1339285"
        rx="1.1339285" />
     <rect
-       style="fill:#000000;fill-opacity:1;stroke-width:0.266946"
+       style="fill:#8aaec5;fill-opacity:1;stroke-width:0.266946"
        id="rect1126-3-75"
        width="9.6591415"
        height="14.026572"
@@ -562,7 +576,7 @@
        ry="1.1339285"
        rx="1.1339285" />
     <rect
-       style="fill:#000000;fill-opacity:1;stroke-width:0.266946"
+       style="fill:#8aaec5;fill-opacity:1;stroke-width:0.266946"
        id="rect1126-3-3"
        width="9.6591415"
        height="14.026572"
@@ -571,7 +585,7 @@
        ry="1.1339285"
        rx="1.1339285" />
     <rect
-       style="fill:#000000;fill-opacity:1;stroke-width:0.266946"
+       style="fill:#8aaec5;fill-opacity:1;stroke-width:0.266946"
        id="rect1126-3-20"
        width="9.6591415"
        height="14.026572"
@@ -580,7 +594,7 @@
        ry="1.1339285"
        rx="1.1339285" />
     <rect
-       style="fill:#000000;fill-opacity:1;stroke-width:0.266946"
+       style="fill:#8aaec5;fill-opacity:1;stroke-width:0.266946"
        id="rect1126-3-31"
        width="9.6591415"
        height="14.026572"
@@ -633,350 +647,361 @@
          id="path1157" />
     </g>
     <g
-       aria-label="MIDI-CV MTS-ESP"
-       id="text1094"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:1.1;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       transform="translate(0,-0.3779762)">
-      <path
-         d="m 14.779224,7.5040364 -0.0085,-2.9633308 H 14.207725 L 13.115526,6.382204 12.006393,4.5407056 h -0.567266 v 2.9633308 h 0.643466 V 5.7641379 L 12.950426,7.19077 h 0.309033 l 0.872066,-1.4647321 0.0042,1.7779985 z"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1181" />
-      <path
-         d="m 15.482288,7.5040364 h 0.685799 V 4.5407056 h -0.685799 z"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1183" />
-      <path
-         d="m 16.871349,7.5040364 h 1.346199 c 0.969432,0 1.634065,-0.5841995 1.634065,-1.4816654 0,-0.8974659 -0.664633,-1.4816654 -1.634065,-1.4816654 h -1.346199 z m 0.6858,-0.5630328 V 5.1037384 h 0.626532 c 0.588433,0 0.973666,0.3513664 0.973666,0.9186326 0,0.5672662 -0.385233,0.9186326 -0.973666,0.9186326 z"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1185" />
-      <path
-         d="m 20.368807,7.5040364 h 0.685799 V 4.5407056 h -0.685799 z"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1187" />
-      <path
-         d="m 21.626635,6.5769372 h 1.198032 V 6.047771 h -1.198032 z"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1189" />
-      <path
-         d="m 24.829678,7.5548364 c 0.516466,0 0.944033,-0.1862665 1.223432,-0.5291662 L 25.612844,6.6192705 c -0.198966,0.2328331 -0.448733,0.3513664 -0.745066,0.3513664 -0.554566,0 -0.948266,-0.3894664 -0.948266,-0.9482659 0,-0.5587995 0.3937,-0.9482659 0.948266,-0.9482659 0.296333,0 0.5461,0.1185333 0.745066,0.3471331 L 26.05311,5.0148385 C 25.773711,4.6761721 25.346144,4.4899056 24.833911,4.4899056 c -0.922865,0 -1.608665,0.6392328 -1.608665,1.5324654 0,0.8932326 0.6858,1.5324654 1.604432,1.5324654 z"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1191" />
-      <path
-         d="m 28.663025,4.5407056 -0.914399,2.1166649 -0.9017,-2.1166649 h -0.740832 l 1.278465,2.9633308 h 0.677333 l 1.282699,-2.9633308 z"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1193" />
-      <path
-         d="M 14.047487,12.160699 14.03902,9.1973684 H 13.475987 L 12.383788,11.038867 11.274656,9.1973684 H 10.70739 v 2.9633306 h 0.643466 v -1.739898 l 0.867832,1.426632 h 0.309033 l 0.872066,-1.464732 0.0042,1.777998 z"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1195" />
-      <path
-         d="m 15.364383,12.160699 h 0.685799 V 9.756168 h 0.948266 V 9.1973684 H 14.416117 V 9.756168 h 0.948266 z"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1197" />
-      <path
-         d="m 18.312169,12.211499 c 0.846666,0 1.257299,-0.423333 1.257299,-0.918632 0,-1.087966 -1.722965,-0.7112 -1.722965,-1.257299 0,-0.1862668 0.156633,-0.3386667 0.563033,-0.3386667 0.262466,0 0.5461,0.0762 0.821266,0.2328332 L 19.442468,9.4090349 C 19.167302,9.2354684 18.786302,9.1465685 18.413769,9.1465685 c -0.842432,0 -1.248832,0.4190996 -1.248832,0.9228655 0,1.100666 1.722965,0.719666 1.722965,1.274233 0,0.182033 -0.1651,0.317499 -0.571499,0.317499 -0.3556,0 -0.728133,-0.127 -0.977899,-0.309033 L 17.10567,11.8686 c 0.262467,0.203199 0.7366,0.342899 1.206499,0.342899 z"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1199" />
-      <path
-         d="m 19.968857,11.2336 h 1.198032 v -0.529166 h -1.198032 z"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1201" />
-      <path
-         d="m 22.418764,11.610366 v -0.685799 h 1.375832 v -0.5334 H 22.418764 V 9.7477013 h 1.557865 V 9.1973684 h -2.239431 v 2.9633306 h 2.294464 v -0.550333 z"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1203" />
-      <path
-         d="m 25.555132,12.211499 c 0.846666,0 1.257299,-0.423333 1.257299,-0.918632 0,-1.087966 -1.722965,-0.7112 -1.722965,-1.257299 0,-0.1862668 0.156633,-0.3386667 0.563033,-0.3386667 0.262466,0 0.546099,0.0762 0.821266,0.2328332 L 26.685431,9.4090349 C 26.410265,9.2354684 26.029265,9.1465685 25.656732,9.1465685 c -0.842432,0 -1.248832,0.4190996 -1.248832,0.9228655 0,1.100666 1.722965,0.719666 1.722965,1.274233 0,0.182033 -0.1651,0.317499 -0.571499,0.317499 -0.3556,0 -0.728133,-0.127 -0.9779,-0.309033 L 24.348633,11.8686 c 0.262467,0.203199 0.7366,0.342899 1.206499,0.342899 z"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1205" />
-      <path
-         d="m 28.567874,9.1973684 h -1.282699 v 2.9633306 h 0.685799 v -0.817032 h 0.5969 c 0.791633,0 1.286932,-0.410633 1.286932,-1.071033 0,-0.6646326 -0.495299,-1.0752656 -1.286932,-1.0752656 z m -0.0381,1.5874986 h -0.5588 V 9.756168 h 0.5588 c 0.4191,0 0.630766,0.1904998 0.630766,0.516466 0,0.321733 -0.211666,0.512233 -0.630766,0.512233 z"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1207" />
-    </g>
-    <g
        aria-label="FROM DEVICE"
        id="text1115"
-       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583">
-      <path
-         d="M 10.486459,49.743963 V 49.397888 H 8.8640344 v 2.2225 h 0.4127499 v -0.8509 h 1.0731497 v -0.34925 H 9.2767843 v -0.676275 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:3.175px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Semi-Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1160" />
-      <path
-         d="m 12.784266,51.620388 -0.511175,-0.73025 c 0.301625,-0.117475 0.473075,-0.365125 0.473075,-0.701675 0,-0.492125 -0.36195,-0.790575 -0.94615,-0.790575 h -0.9144 v 2.2225 h 0.41275 v -0.6477 h 0.50165 c 0.02858,0 0.05715,0 0.08573,-0.0032 l 0.454025,0.650875 z m -0.454025,-1.431925 c 0,0.2794 -0.187325,0.4445 -0.549275,0.4445 h -0.4826 v -0.885825 h 0.4826 c 0.36195,0 0.549275,0.161925 0.549275,0.441325 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:3.175px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Semi-Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1162" />
-      <path
-         d="m 14.24308,51.652138 c 0.688975,0 1.196975,-0.4826 1.196975,-1.143 0,-0.6604 -0.508,-1.143 -1.196975,-1.143 -0.688975,0 -1.196975,0.485775 -1.196975,1.143 0,0.657225 0.508,1.143 1.196975,1.143 z m 0,-0.36195 c -0.447675,0 -0.78105,-0.327025 -0.78105,-0.78105 0,-0.454025 0.333375,-0.78105 0.78105,-0.78105 0.447675,0 0.78105,0.327025 0.78105,0.78105 0,0.454025 -0.333375,0.78105 -0.78105,0.78105 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:3.175px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Semi-Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1164" />
-      <path
-         d="m 18.309609,51.620388 -0.0032,-2.2225 h -0.339725 l -0.866775,1.4732 -0.88265,-1.4732 h -0.339725 v 2.2225 h 0.3937 v -1.45415 l 0.73025,1.20015 h 0.18415 l 0.73025,-1.2192 0.0032,1.4732 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:3.175px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Semi-Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1166" />
-      <path
-         d="m 19.784298,51.620388 h 0.97155 c 0.720725,0 1.21285,-0.4445 1.21285,-1.11125 0,-0.66675 -0.492125,-1.11125 -1.21285,-1.11125 h -0.97155 z m 0.41275,-0.34925 v -1.524 h 0.53975 c 0.4953,0 0.815975,0.301625 0.815975,0.762 0,0.460375 -0.320675,0.762 -0.815975,0.762 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:3.175px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Semi-Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1168" />
-      <path
-         d="m 22.820143,51.274313 v -0.612775 h 1.07315 v -0.339725 h -1.07315 v -0.57785 h 1.209675 v -0.346075 h -1.622425 v 2.2225 h 1.666875 v -0.346075 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:3.175px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Semi-Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1170" />
-      <path
-         d="m 26.122639,49.397888 -0.746125,1.7145 -0.739775,-1.7145 h -0.447675 l 0.97155,2.2225 h 0.4064 l 0.968375,-2.2225 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:3.175px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Semi-Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1172" />
-      <path
-         d="m 26.766817,51.620388 h 0.41275 v -2.2225 h -0.41275 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:3.175px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Semi-Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1174" />
-      <path
-         d="m 28.806309,51.652138 c 0.365125,0 0.676275,-0.130175 0.88265,-0.371475 l -0.2667,-0.254 c -0.161925,0.1778 -0.36195,0.263525 -0.593725,0.263525 -0.460375,0 -0.79375,-0.32385 -0.79375,-0.78105 0,-0.4572 0.333375,-0.78105 0.79375,-0.78105 0.231775,0 0.4318,0.08573 0.593725,0.26035 l 0.2667,-0.250825 c -0.206375,-0.2413 -0.517525,-0.371475 -0.879475,-0.371475 -0.682625,0 -1.190625,0.479425 -1.190625,1.143 0,0.663575 0.508,1.143 1.18745,1.143 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:3.175px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Semi-Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1176" />
-      <path
-         d="m 30.497194,51.274313 v -0.612775 h 1.07315 v -0.339725 h -1.07315 v -0.57785 h 1.209675 v -0.346075 h -1.622425 v 2.2225 h 1.666875 v -0.346075 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:3.175px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Semi-Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="path1178" />
-    </g>
+       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583" />
     <g
        aria-label="CONT"
        id="text1253"
-       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.264583">
+       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;fill:#090b0d;fill-opacity:1;stroke-width:0.264583">
       <path
          d="m 29.39985,106.55955 c 0.283986,0 0.525991,-0.10124 0.686505,-0.28892 l -0.207433,-0.19756 c -0.125942,0.13829 -0.281517,0.20497 -0.461786,0.20497 -0.358069,0 -0.61736,-0.25189 -0.61736,-0.60749 0,-0.35559 0.259291,-0.60748 0.61736,-0.60748 0.180269,0 0.335844,0.0667 0.461786,0.2025 l 0.207433,-0.19509 c -0.160514,-0.18768 -0.402519,-0.28892 -0.684035,-0.28892 -0.53093,0 -0.92604,0.37288 -0.92604,0.88899 0,0.51612 0.39511,0.889 0.92357,0.889 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1103" />
       <path
          d="m 31.162876,106.55955 c 0.535868,0 0.930979,-0.37535 0.930979,-0.889 0,-0.51364 -0.395111,-0.88899 -0.930979,-0.88899 -0.535868,0 -0.930979,0.37782 -0.930979,0.88899 0,0.51118 0.395111,0.889 0.930979,0.889 z m 0,-0.28151 c -0.348191,0 -0.607482,-0.25436 -0.607482,-0.60749 0,-0.35313 0.259291,-0.60748 0.607482,-0.60748 0.348191,0 0.607482,0.25435 0.607482,0.60748 0,0.35313 -0.259291,0.60749 -0.607482,0.60749 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1105" />
       <path
          d="m 33.65157,104.80625 v 1.17052 l -0.953204,-1.17052 h -0.26423 v 1.72861 h 0.318558 v -1.17052 l 0.953204,1.17052 h 0.26423 v -1.72861 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1107" />
       <path
          d="m 34.786393,106.53486 h 0.321028 v -1.45697 h 0.57291 v -0.27164 h -1.466848 v 0.27164 h 0.57291 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1109" />
     </g>
     <g
        aria-label="STOP"
        id="text1253-4"
-       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;stroke-width:0.264583">
+       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583">
       <path
          d="m 17.815931,106.55404 c 0.474133,0 0.698852,-0.23707 0.698852,-0.51365 0,-0.63464 -1.024818,-0.39511 -1.024818,-0.76305 0,-0.13088 0.108656,-0.2346 0.375355,-0.2346 0.150636,0 0.321027,0.0445 0.476602,0.13582 l 0.101247,-0.24941 c -0.150636,-0.0988 -0.367946,-0.15311 -0.575379,-0.15311 -0.474133,0 -0.696383,0.23707 -0.696383,0.51611 0,0.64206 1.027288,0.39758 1.027288,0.77047 0,0.12841 -0.113595,0.22472 -0.382764,0.22472 -0.212372,0 -0.432152,-0.079 -0.57044,-0.19015 l -0.111125,0.24941 c 0.143227,0.12348 0.412396,0.20744 0.681565,0.20744 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1094" />
       <path
          d="m 19.159654,106.52934 h 0.321027 v -1.45697 h 0.57291 v -0.27164 h -1.466847 v 0.27164 h 0.57291 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1096" />
       <path
          d="m 21.077907,106.55404 c 0.535869,0 0.930979,-0.37536 0.930979,-0.889 0,-0.51364 -0.39511,-0.889 -0.930979,-0.889 -0.535868,0 -0.930979,0.37782 -0.930979,0.889 0,0.51117 0.395111,0.889 0.930979,0.889 z m 0,-0.28152 c -0.348191,0 -0.607482,-0.25435 -0.607482,-0.60748 0,-0.35313 0.259291,-0.60748 0.607482,-0.60748 0.348191,0 0.607482,0.25435 0.607482,0.60748 0,0.35313 -0.259291,0.60748 -0.607482,0.60748 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1098" />
       <path
          d="m 23.060366,104.80073 h -0.711199 v 1.72861 h 0.321027 v -0.49882 h 0.390172 c 0.454377,0 0.735893,-0.2346 0.735893,-0.61489 0,-0.38277 -0.281516,-0.6149 -0.735893,-0.6149 z m -0.01482,0.95815 h -0.375355 v -0.68651 h 0.375355 c 0.281516,0 0.427213,0.12594 0.427213,0.34326 0,0.21731 -0.145697,0.34325 -0.427213,0.34325 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1100" />
     </g>
     <g
        aria-label="STRT"
        id="text1253-7"
-       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;stroke-width:0.264583">
+       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583">
       <path
          d="m 6.2533031,106.55404 c 0.4741324,0 0.6988515,-0.23707 0.6988515,-0.51365 0,-0.63464 -1.0248176,-0.39511 -1.0248176,-0.76305 0,-0.13088 0.1086553,-0.2346 0.3753549,-0.2346 0.1506358,0 0.3210271,0.0445 0.4766019,0.13582 l 0.101247,-0.24941 c -0.1506358,-0.0988 -0.3679466,-0.15311 -0.5753795,-0.15311 -0.4741325,0 -0.6963821,0.23707 -0.6963821,0.51611 0,0.64206 1.027287,0.39758 1.027287,0.77047 0,0.12841 -0.1135942,0.22472 -0.3827631,0.22472 -0.2123719,0 -0.432152,-0.079 -0.5704407,-0.19015 l -0.1111248,0.24941 c 0.1432275,0.12348 0.4123965,0.20744 0.6815655,0.20744 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1085" />
       <path
          d="m 7.5970257,106.52934 h 0.3210272 v -1.45697 H 8.490963 v -0.27164 H 7.0241156 v 0.27164 h 0.5729101 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1087" />
       <path
          d="m 10.208613,106.52934 -0.39758,-0.56797 c 0.234597,-0.0914 0.367947,-0.28398 0.367947,-0.54574 0,-0.38277 -0.2815166,-0.6149 -0.7358935,-0.6149 H 8.7318877 v 1.72861 h 0.3210272 v -0.50376 h 0.3901716 c 0.022225,0 0.04445,0 0.066675,-0.002 l 0.35313,0.50623 z m -0.3531301,-1.11371 c 0,0.21731 -0.1456969,0.34572 -0.4272131,0.34572 H 9.0529149 v -0.68898 h 0.3753549 c 0.2815162,0 0.4272131,0.12594 0.4272131,0.34326 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1089" />
       <path
          d="m 10.862281,106.52934 h 0.321027 v -1.45697 h 0.57291 v -0.27164 h -1.466847 v 0.27164 h 0.57291 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1091" />
     </g>
     <g
        aria-label="CLK"
        id="text1253-8"
-       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;stroke-width:0.264583">
+       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583">
       <path
          d="m 7.2020977,90.550833 c 0.2839856,0 0.5259907,-0.101247 0.6865043,-0.288925 L 7.6811691,90.064353 c -0.1259415,0.138289 -0.2815162,0.204964 -0.4617853,0.204964 -0.3580688,0 -0.61736,-0.251883 -0.61736,-0.607483 0,-0.355599 0.2592912,-0.607482 0.61736,-0.607482 0.1802691,0 0.3358438,0.06668 0.4617853,0.202494 L 7.888602,89.06176 C 7.7280884,88.874083 7.4860833,88.772836 7.2045672,88.772836 c -0.5309296,0 -0.92604,0.372885 -0.92604,0.888998 0,0.516113 0.3951104,0.888999 0.9235705,0.888999 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1078" />
       <path
          d="M 8.1962016,90.526138 H 9.4210438 V 90.2545 H 8.5172288 V 88.79753 H 8.1962016 Z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1080" />
       <path
          d="m 10.881988,90.526138 h 0.375355 L 10.486877,89.570465 11.212893,88.79753 H 10.852354 L 9.9979282,89.684059 V 88.79753 H 9.676901 v 1.728608 h 0.3210272 v -0.442029 l 0.2741078,-0.281517 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1082" />
     </g>
     <g
        aria-label="CLK/N"
        id="text1253-8-4"
-       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;stroke-width:0.264583">
+       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583">
       <path
          d="m 17.234924,90.559492 c 0.283985,0 0.52599,-0.101247 0.686504,-0.288924 l -0.207433,-0.197556 c -0.125941,0.138289 -0.281516,0.204964 -0.461785,0.204964 -0.358069,0 -0.61736,-0.251883 -0.61736,-0.607482 0,-0.3556 0.259291,-0.607483 0.61736,-0.607483 0.180269,0 0.335844,0.06668 0.461785,0.202495 l 0.207433,-0.195086 c -0.160514,-0.187678 -0.402519,-0.288925 -0.684035,-0.288925 -0.530929,0 -0.92604,0.372886 -0.92604,0.888999 0,0.516113 0.395111,0.888998 0.923571,0.888998 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1067" />
       <path
          d="M 18.229028,90.534798 H 19.45387 V 90.263159 H 18.550055 V 88.80619 h -0.321027 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1069" />
       <path
          d="m 20.914814,90.534798 h 0.375355 L 20.519703,89.579124 21.245719,88.80619 H 20.88518 l -0.854426,0.886529 V 88.80619 h -0.321027 v 1.728608 h 0.321027 v -0.44203 l 0.274108,-0.281516 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1071" />
       <path
          d="m 21.217012,90.781742 h 0.276577 l 0.814915,-2.326213 h -0.276577 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1073" />
       <path
          d="m 23.65705,88.80619 v 1.170514 L 22.703846,88.80619 h -0.26423 v 1.728608 h 0.318558 v -1.170515 l 0.953203,1.170515 h 0.264231 V 88.80619 Z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1075" />
     </g>
     <g
        aria-label="V/OCT"
        transform="translate(-77.197995,-46.785374)"
        id="text1253-8-9"
-       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;stroke-width:0.264583">
+       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583">
       <path
          d="m 83.462062,103.52467 -0.580319,1.3335 -0.575379,-1.3335 h -0.348191 l 0.755648,1.72861 h 0.316089 l 0.753179,-1.72861 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1014" />
       <path
          d="m 83.599,105.50022 h 0.276577 l 0.814915,-2.32621 h -0.276577 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1016" />
       <path
          d="m 85.58088,105.27798 c 0.535868,0 0.930979,-0.37536 0.930979,-0.889 0,-0.51365 -0.395111,-0.889 -0.930979,-0.889 -0.535869,0 -0.930979,0.37782 -0.930979,0.889 0,0.51117 0.39511,0.889 0.930979,0.889 z m 0,-0.28152 c -0.348191,0 -0.607482,-0.25435 -0.607482,-0.60748 0,-0.35313 0.259291,-0.60749 0.607482,-0.60749 0.348191,0 0.607482,0.25436 0.607482,0.60749 0,0.35313 -0.259291,0.60748 -0.607482,0.60748 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1018" />
       <path
          d="m 87.652238,105.27798 c 0.283986,0 0.525991,-0.10125 0.686505,-0.28893 L 88.13131,104.7915 c -0.125942,0.13828 -0.281517,0.20496 -0.461786,0.20496 -0.358069,0 -0.61736,-0.25188 -0.61736,-0.60748 0,-0.3556 0.259291,-0.60749 0.61736,-0.60749 0.180269,0 0.335844,0.0667 0.461786,0.2025 l 0.207433,-0.19509 c -0.160514,-0.18767 -0.402519,-0.28892 -0.684035,-0.28892 -0.53093,0 -0.92604,0.37288 -0.92604,0.889 0,0.51611 0.39511,0.889 0.92357,0.889 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1020" />
       <path
          d="m 88.97771,105.25328 h 0.321027 v -1.45697 h 0.57291 v -0.27164 H 88.4048 v 0.27164 h 0.57291 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1022" />
     </g>
     <g
        aria-label="GATE"
        transform="translate(-77.197995,-46.785374)"
        id="text1253-8-79"
-       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;stroke-width:0.264583">
+       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583">
       <path
          d="m 95.478224,105.0587 c -0.111125,0.0642 -0.232127,0.0889 -0.355599,0.0889 -0.365477,0 -0.624769,-0.25682 -0.624769,-0.60748 0,-0.35807 0.259292,-0.60748 0.627238,-0.60748 0.185208,0 0.340783,0.0617 0.476602,0.19756 l 0.202494,-0.19756 c -0.162983,-0.18521 -0.404988,-0.28152 -0.693913,-0.28152 -0.540807,0 -0.935917,0.37289 -0.935917,0.889 0,0.51612 0.39511,0.889 0.930979,0.889 0.244474,0 0.496357,-0.0741 0.676626,-0.21978 v -0.68897 h -0.303741 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1025" />
       <path
          d="m 97.496953,105.40443 h 0.335843 l -0.780343,-1.72861 h -0.316088 l -0.777874,1.72861 h 0.330905 l 0.170392,-0.40005 h 0.864304 z m -0.92851,-0.65194 0.323497,-0.75564 0.325966,0.75564 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1027" />
       <path
          d="m 98.314067,105.40443 h 0.321027 v -1.45697 h 0.57291 v -0.27164 h -1.466847 v 0.27164 h 0.57291 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1029" />
       <path
          d="m 99.769956,105.13526 v -0.4766 h 0.834674 v -0.26423 h -0.834674 v -0.44944 h 0.940854 v -0.26917 h -1.261881 v 1.72861 h 1.296451 v -0.26917 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1031" />
     </g>
     <g
        aria-label="VEL"
        transform="translate(-77.197995,-46.785374)"
        id="text1253-8-7"
-       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;stroke-width:0.264583">
+       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583">
       <path
          d="m 108.11264,103.59075 -0.58032,1.3335 -0.57537,-1.3335 h -0.3482 l 0.75565,1.72861 h 0.31609 l 0.75318,-1.72861 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1034" />
       <path
          d="m 108.9347,105.05019 v -0.4766 h 0.83467 v -0.26423 h -0.83467 v -0.44944 h 0.94085 v -0.26917 h -1.26188 v 1.72861 h 1.29646 v -0.26917 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1036" />
       <path
          d="m 110.268,105.31936 h 1.22484 v -0.27164 h -0.90381 v -1.45697 H 110.268 Z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1038" />
     </g>
     <g
        aria-label="AFT"
        transform="translate(-77.197995,-46.785374)"
        id="text1253-8-1"
-       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;stroke-width:0.264583">
+       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583">
       <path
          d="m 84.888731,121.3327 h 0.335844 l -0.780343,-1.72861 h -0.316088 l -0.777874,1.72861 h 0.330905 l 0.170392,-0.40005 h 0.864304 z m -0.928509,-0.65193 0.323497,-0.75565 0.325966,0.75565 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1041" />
       <path
          d="m 86.703886,119.87326 v -0.26917 h -1.261884 v 1.72861 h 0.321027 v -0.66181 H 86.5977 v -0.27164 h -0.834671 v -0.52599 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1043" />
       <path
          d="m 87.37947,121.3327 h 0.321027 v -1.45697 h 0.57291 v -0.27164 H 86.80656 v 0.27164 h 0.57291 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1045" />
     </g>
     <g
        aria-label="PW"
        transform="translate(-77.197995,-46.785374)"
        id="text1253-8-6"
-       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;stroke-width:0.264583">
+       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583">
       <path
          d="m 96.217588,119.58753 h -0.711199 v 1.72861 h 0.321027 v -0.49883 h 0.390172 c 0.454377,0 0.735893,-0.23459 0.735893,-0.61489 0,-0.38276 -0.281516,-0.61489 -0.735893,-0.61489 z m -0.01482,0.95814 h -0.375355 v -0.6865 h 0.375355 c 0.281516,0 0.427213,0.12594 0.427213,0.34325 0,0.21731 -0.145697,0.34325 -0.427213,0.34325 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1048" />
       <path
          d="m 99.47721,119.58753 -0.44203,1.32115 -0.437091,-1.32115 h -0.296333 l -0.446968,1.31374 -0.429683,-1.31374 h -0.333374 l 0.57291,1.72861 h 0.343252 l 0.434621,-1.27917 0.427214,1.27917 h 0.340782 l 0.57291,-1.72861 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1050" />
     </g>
     <g
        aria-label="MW"
        transform="translate(-77.197995,-46.785374)"
        id="text1253-8-53"
-       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;stroke-width:0.264583">
+       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583">
       <path
          d="m 108.55642,121.28387 -0.002,-1.72861 h -0.26423 l -0.67416,1.14582 -0.6865,-1.14582 h -0.26423 v 1.72861 h 0.30621 v -1.13101 l 0.56797,0.93345 h 0.14323 l 0.56797,-0.94826 0.002,1.14582 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1053" />
       <path
          d="m 111.22889,119.55526 -0.44203,1.32115 -0.43709,-1.32115 h -0.29633 l -0.44697,1.31374 -0.42968,-1.31374 h -0.33338 l 0.57291,1.72861 h 0.34326 l 0.43462,-1.27917 0.42721,1.27917 h 0.34078 l 0.57291,-1.72861 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1055" />
     </g>
     <g
        aria-label="RTRG"
        transform="translate(-77.197995,-46.785374)"
        id="text1253-8-5"
-       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;stroke-width:0.264583">
+       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;display:inline;mix-blend-mode:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583">
       <path
          d="m 107.44665,137.35406 -0.39758,-0.56797 c 0.23459,-0.0914 0.36794,-0.28398 0.36794,-0.54574 0,-0.38277 -0.28151,-0.61489 -0.73589,-0.61489 h -0.7112 v 1.7286 h 0.32103 v -0.50376 h 0.39017 c 0.0222,0 0.0444,0 0.0667,-0.002 l 0.35313,0.50623 z m -0.35313,-1.11371 c 0,0.21731 -0.1457,0.34572 -0.42722,0.34572 h -0.37535 v -0.68897 h 0.37535 c 0.28152,0 0.42722,0.12594 0.42722,0.34325 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1058" />
       <path
          d="m 108.10031,137.35406 h 0.32103 v -1.45696 h 0.57291 v -0.27164 h -1.46685 v 0.27164 h 0.57291 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1060" />
       <path
          d="m 110.7119,137.35406 -0.39758,-0.56797 c 0.2346,-0.0914 0.36795,-0.28398 0.36795,-0.54574 0,-0.38277 -0.28152,-0.61489 -0.7359,-0.61489 h -0.71119 v 1.7286 h 0.32102 v -0.50376 h 0.39017 c 0.0222,0 0.0444,0 0.0667,-0.002 l 0.35313,0.50623 z m -0.35313,-1.11371 c 0,0.21731 -0.1457,0.34572 -0.42721,0.34572 h -0.37536 v -0.68897 h 0.37536 c 0.28151,0 0.42721,0.12594 0.42721,0.34325 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1062" />
       <path
          d="m 112.21942,137.00834 c -0.11113,0.0642 -0.23213,0.0889 -0.3556,0.0889 -0.36548,0 -0.62477,-0.25682 -0.62477,-0.60748 0,-0.35807 0.25929,-0.60748 0.62724,-0.60748 0.1852,0 0.34078,0.0617 0.4766,0.19755 l 0.20249,-0.19755 c -0.16298,-0.18521 -0.40499,-0.28152 -0.69391,-0.28152 -0.54081,0 -0.93592,0.37289 -0.93592,0.889 0,0.51611 0.39511,0.889 0.93098,0.889 0.24448,0 0.49636,-0.0741 0.67663,-0.21978 v -0.68897 h -0.30374 z"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#090b0d;fill-opacity:1;stroke-width:0.264583"
          id="path1064" />
+    </g>
+    <g
+       aria-label="MTS-ESP"
+       id="text1087"
+       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+       transform="translate(0,1.5875)">
+      <path
+         d="m 13.151355,7.7107139 -0.0099,-3.457223 h -0.65685 L 11.210371,6.401908 9.9163818,4.2534909 H 9.2545705 v 3.457223 H 10.005282 V 5.6808301 l 1.012472,1.6644059 h 0.360539 l 1.017412,-1.7088559 0.0049,2.0743338 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         id="path5244" />
+      <path
+         d="m 14.687735,7.7107139 h 0.8001 V 4.9054244 h 1.106312 V 4.2534909 h -3.012723 v 0.6519335 h 1.106311 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         id="path5246" />
+      <path
+         d="m 18.126823,7.7699805 c 0.987778,0 1.466851,-0.493889 1.466851,-1.0717391 0,-1.2692947 -2.010129,-0.8297335 -2.010129,-1.4668503 0,-0.2173112 0.182739,-0.3951112 0.656873,-0.3951112 0.306211,0 0.637117,0.0889 0.958144,0.2716389 l 0.246945,-0.6074834 c -0.321028,-0.2024945 -0.765528,-0.3062112 -1.20015,-0.3062112 -0.982839,0 -1.456973,0.4889501 -1.456973,1.076678 0,1.2841114 2.010128,0.8396113 2.010128,1.4866059 0,0.2123723 -0.192616,0.3704167 -0.66675,0.3704167 -0.414867,0 -0.849489,-0.1481667 -1.140883,-0.3605389 L 16.71924,7.3699305 c 0.306211,0.2370667 0.859367,0.40005 1.407583,0.40005 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         id="path5248" />
+      <path
+         d="m 20.059627,6.629097 h 1.397706 V 6.0117357 h -1.397706 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         id="path5250" />
+      <path
+         d="M 22.917855,7.0686582 V 6.268558 h 1.605139 V 5.6462579 H 22.917855 V 4.8955466 h 1.817511 V 4.2534909 h -2.612672 v 3.457223 h 2.676878 V 7.0686582 Z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         id="path5252" />
+      <path
+         d="m 26.576955,7.7699805 c 0.987778,0 1.46685,-0.493889 1.46685,-1.0717391 0,-1.2692947 -2.010128,-0.8297335 -2.010128,-1.4668503 0,-0.2173112 0.182739,-0.3951112 0.656872,-0.3951112 0.306211,0 0.637117,0.0889 0.958145,0.2716389 L 27.895638,4.5004354 C 27.57461,4.2979409 27.13011,4.1942242 26.695488,4.1942242 c -0.982839,0 -1.456972,0.4889501 -1.456972,1.076678 0,1.2841114 2.010128,0.8396113 2.010128,1.4866059 0,0.2123723 -0.192617,0.3704167 -0.66675,0.3704167 -0.414867,0 -0.849489,-0.1481667 -1.140884,-0.3605389 l -0.271639,0.6025446 c 0.306211,0.2370667 0.859367,0.40005 1.407584,0.40005 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         id="path5254" />
+      <path
+         d="m 30.091825,4.2534909 h -1.496484 v 3.457223 h 0.8001 V 6.7575081 h 0.696384 c 0.923572,0 1.501422,-0.4790723 1.501422,-1.2495392 0,-0.7754057 -0.57785,-1.254478 -1.501422,-1.254478 z m -0.04445,1.8520837 H 29.395441 V 4.9054244 h 0.651934 c 0.48895,0 0.735894,0.22225 0.735894,0.6025445 0,0.3753557 -0.246944,0.5976057 -0.735894,0.5976057 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         id="path5256" />
+    </g>
+    <g
+       aria-label="MIDI TO CV"
+       id="text1091"
+       style="font-size:10.5833px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;stroke-width:0.264583"
+       transform="matrix(0.84144212,0,0,0.84144212,3.2617866,8.0752369)">
+      <path
+         d="m 10.165343,52.538689 -0.0099,-3.457223 H 9.498593 L 8.2243594,51.229883 6.9303703,49.081466 H 6.268559 v 3.457223 h 0.7507113 v -2.029884 l 1.0124724,1.664406 h 0.360539 l 1.0174113,-1.708856 0.00494,2.074334 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         id="path5259" />
+      <path
+         d="m 10.985585,52.538689 h 0.8001 v -3.457223 h -0.8001 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         id="path5261" />
+      <path
+         d="m 12.606158,52.538689 h 1.570567 c 1.131006,0 1.906411,-0.681567 1.906411,-1.728612 0,-1.047045 -0.775405,-1.728611 -1.906411,-1.728611 h -1.570567 z m 0.8001,-0.656873 v -2.143478 h 0.730956 c 0.686505,0 1.135944,0.409928 1.135944,1.071739 0,0.661811 -0.449439,1.071739 -1.135944,1.071739 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         id="path5263" />
+      <path
+         d="m 16.68653,52.538689 h 0.8001 v -3.457223 h -0.8001 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         id="path5265" />
+      <path
+         d="m 20.421951,52.538689 h 0.8001 v -2.80529 h 1.106312 V 49.081466 H 19.31564 v 0.651933 h 1.106311 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         id="path5267" />
+      <path
+         d="m 24.380085,52.597955 c 1.086556,0 1.891595,-0.75565 1.891595,-1.787878 0,-1.032228 -0.805039,-1.787878 -1.891595,-1.787878 -1.091494,0 -1.891595,0.760589 -1.891595,1.787878 0,1.027289 0.800101,1.787878 1.891595,1.787878 z m 0,-0.681566 c -0.617361,0 -1.081617,-0.449439 -1.081617,-1.106312 0,-0.656872 0.464256,-1.106311 1.081617,-1.106311 0.617361,0 1.081617,0.449439 1.081617,1.106311 0,0.656873 -0.464256,1.106312 -1.081617,1.106312 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         id="path5269" />
+      <path
+         d="m 29.926229,52.597955 c 0.602544,0 1.101372,-0.217311 1.427339,-0.617361 l -0.513645,-0.474133 c -0.232128,0.271639 -0.523522,0.409928 -0.869244,0.409928 -0.646995,0 -1.106312,-0.454378 -1.106312,-1.106312 0,-0.651933 0.459317,-1.106311 1.106312,-1.106311 0.345722,0 0.637116,0.138289 0.869244,0.404989 l 0.513645,-0.474134 c -0.325967,-0.395111 -0.824795,-0.612422 -1.422401,-0.612422 -1.076678,0 -1.876778,0.745772 -1.876778,1.787878 0,1.042106 0.8001,1.787878 1.87184,1.787878 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         id="path5271" />
+      <path
+         d="m 34.398471,49.081466 -1.0668,2.469445 -1.051984,-2.469445 h -0.864306 l 1.491545,3.457223 h 0.790222 l 1.496484,-3.457223 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         id="path5273" />
+    </g>
+    <g
+       aria-label="CONNECTED"
+       id="text1026"
+       style="font-size:2.46944px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:Montserrat;fill:#090b0d;fill-opacity:1;stroke-width:0.264583;filter:url(#filter3328)"
+       transform="translate(-1.5875,1.5875)">
+      <path
+         d="m 16.340264,13.059935 c 0.269169,0 0.501296,-0.09384 0.65934,-0.271639 l -0.160513,-0.155574 c -0.13335,0.140758 -0.296333,0.207433 -0.48648,0.207433 -0.390172,0 -0.679096,-0.281517 -0.679096,-0.66428 0,-0.382763 0.288924,-0.664279 0.679096,-0.664279 0.190147,0 0.35313,0.0642 0.48648,0.204963 l 0.160513,-0.155574 c -0.158044,-0.1778 -0.390171,-0.269169 -0.656871,-0.269169 -0.525991,0 -0.916162,0.372885 -0.916162,0.884059 0,0.511174 0.390171,0.88406 0.913693,0.88406 z"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+         id="path5225" />
+      <path
+         d="m 18.093643,13.059935 c 0.525991,0 0.916162,-0.375355 0.916162,-0.88406 0,-0.508704 -0.390171,-0.884059 -0.916162,-0.884059 -0.530929,0 -0.921101,0.377824 -0.921101,0.884059 0,0.506235 0.390172,0.88406 0.921101,0.88406 z m 0,-0.21978 c -0.387702,0 -0.674157,-0.281517 -0.674157,-0.66428 0,-0.382763 0.286455,-0.664279 0.674157,-0.664279 0.382763,0 0.669218,0.281516 0.669218,0.664279 0,0.382763 -0.286455,0.66428 -0.669218,0.66428 z"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+         id="path5227" />
+      <path
+         d="m 20.626903,11.311571 v 1.289048 l -1.037165,-1.289048 h -0.202494 v 1.728608 h 0.246944 v -1.289047 l 1.037165,1.289047 h 0.202494 v -1.728608 z"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+         id="path5229" />
+      <path
+         d="m 22.633323,11.311571 v 1.289048 l -1.037165,-1.289048 h -0.202494 v 1.728608 h 0.246944 v -1.289047 l 1.037165,1.289047 h 0.202494 v -1.728608 z"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+         id="path5231" />
+      <path
+         d="m 23.647028,12.825338 v -0.558093 h 0.866773 v -0.209903 h -0.866773 v -0.530929 h 0.972959 v -0.214842 h -1.219903 v 1.728608 h 1.254476 v -0.214841 z"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+         id="path5233" />
+      <path
+         d="m 25.817705,13.059935 c 0.269168,0 0.501296,-0.09384 0.65934,-0.271639 l -0.160514,-0.155574 c -0.133349,0.140758 -0.296332,0.207433 -0.486479,0.207433 -0.390172,0 -0.679096,-0.281517 -0.679096,-0.66428 0,-0.382763 0.288924,-0.664279 0.679096,-0.664279 0.190147,0 0.35313,0.0642 0.486479,0.204963 l 0.160514,-0.155574 c -0.158044,-0.1778 -0.390172,-0.269169 -0.656871,-0.269169 -0.525991,0 -0.916162,0.372885 -0.916162,0.884059 0,0.511174 0.390171,0.88406 0.913693,0.88406 z"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+         id="path5235" />
+      <path
+         d="m 27.153286,13.040179 h 0.244474 v -1.513766 h 0.592666 V 11.311571 H 26.56062 v 0.214842 h 0.592666 z"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+         id="path5237" />
+      <path
+         d="m 28.508738,12.825338 v -0.558093 h 0.866773 v -0.209903 h -0.866773 v -0.530929 h 0.972959 v -0.214842 h -1.219903 v 1.728608 h 1.254475 v -0.214841 z"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+         id="path5239" />
+      <path
+         d="m 29.916126,13.040179 h 0.728485 c 0.555624,0 0.933448,-0.35066 0.933448,-0.864304 0,-0.513643 -0.377824,-0.864304 -0.933448,-0.864304 h -0.728485 z m 0.246944,-0.214841 v -1.298925 h 0.466724 c 0.427213,0 0.701321,0.26176 0.701321,0.649462 0,0.387702 -0.274108,0.649463 -0.701321,0.649463 z"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:2.46944px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+         id="path5241" />
     </g>
   </g>
 </svg>

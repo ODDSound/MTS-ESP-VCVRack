@@ -15,7 +15,7 @@
   "modules": [
     {
       "slug": "MIDI_CV_MTS_ESP",
-      "name": "MIDI-CV MTS-ESP",
+      "name": "MTS-ESP MIDI To CV",
       "description": "Converts MIDI from an external device to CV and gates with MTS-ESP tuning support",
       "tags": [
         "External",
@@ -25,7 +25,7 @@
     },
     {
       "slug": "CV_MIDI_MTS_ESP",
-      "name": "CV-MIDI MTS-ESP",
+      "name": "MTS-ESP CV To MIDI ",
       "description": "Converts CV to MIDI and sends to an external device with MTS-ESP tuning support",
       "tags": [
         "External",

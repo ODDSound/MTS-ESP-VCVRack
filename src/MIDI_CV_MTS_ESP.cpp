@@ -26,6 +26,7 @@ struct MIDI_CV_MTS_ESP : Module {
 		NUM_OUTPUTS
 	};
 	enum LightIds {
+		CONNECTED_LIGHT,
 		NUM_LIGHTS
 	};
 
@@ -67,7 +68,7 @@ struct MIDI_CV_MTS_ESP : Module {
 	dsp::PulseGenerator stopPulse;
 	dsp::PulseGenerator continuePulse;
 
-	MTSClient *mtsClient;
+	MTSClient *mtsClient = 0;
 
 	MIDI_CV_MTS_ESP() {
 		config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
@@ -111,6 +112,9 @@ struct MIDI_CV_MTS_ESP : Module {
 	}
 
 	void process(const ProcessArgs& args) override {
+	
+		lights[CONNECTED_LIGHT].setBrightness(MTS_HasMaster(mtsClient)?1.f:0.1f);
+		
 		midi::Message msg;
 		while (midiInput.shift(&msg)) {
 			processMessage(msg);
@@ -534,6 +538,18 @@ struct MIDI_CV_MTS_ESPPanicItem : MenuItem {
 	}
 };
 
+struct MIDI_CV_MTS_ESP_MidiWidget : MidiWidget {
+	void setMidiPort(midi::Port* port) {
+		MidiWidget::setMidiPort(port);
+		driverChoice->bgColor = nvgRGB(0x16, 0x2e, 0x40);
+		driverChoice->color = nvgRGB(0xf0, 0xf0, 0xf0);
+		deviceChoice->bgColor = nvgRGB(0x16, 0x2e, 0x40);
+		deviceChoice->color = nvgRGB(0xf0, 0xf0, 0xf0);
+		channelChoice->bgColor = nvgRGB(0x16, 0x2e, 0x40);
+		channelChoice->color = nvgRGB(0xf0, 0xf0, 0xf0);
+	}
+};
+
 
 struct MIDI_CV_MTS_ESPWidget : ModuleWidget {
 	MIDI_CV_MTS_ESPWidget(MIDI_CV_MTS_ESP* module) {
@@ -544,6 +560,8 @@ struct MIDI_CV_MTS_ESPWidget : ModuleWidget {
 		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, 0)));
 		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
 		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
+		
+		addChild(createLightCentered<SmallLight<GreenLight>>(mm2px(Vec(11.4, 13.7)), module, MIDI_CV_MTS_ESP::CONNECTED_LIGHT));
 
 		addOutput(createOutput<PJ301MPort>(mm2px(Vec(4.61505, 60.1445)), module, MIDI_CV_MTS_ESP::CV_OUTPUT));
 		addOutput(createOutput<PJ301MPort>(mm2px(Vec(16.214, 60.1445)), module, MIDI_CV_MTS_ESP::GATE_OUTPUT));
@@ -558,7 +576,7 @@ struct MIDI_CV_MTS_ESPWidget : ModuleWidget {
 		addOutput(createOutput<PJ301MPort>(mm2px(Vec(16.214, 108.144)), module, MIDI_CV_MTS_ESP::STOP_OUTPUT));
 		addOutput(createOutput<PJ301MPort>(mm2px(Vec(27.8143, 108.144)), module, MIDI_CV_MTS_ESP::CONTINUE_OUTPUT));
 
-		MidiWidget* midiWidget = createWidget<MidiWidget>(mm2px(Vec(3.41891, 14.8373)));
+		MIDI_CV_MTS_ESP_MidiWidget* midiWidget = createWidget<MIDI_CV_MTS_ESP_MidiWidget>(mm2px(Vec(3.41891, 17.8373)));
 		midiWidget->box.size = mm2px(Vec(33.840, 28));
 		midiWidget->setMidiPort(module ? &module->midiInput : NULL);
 		addChild(midiWidget);
