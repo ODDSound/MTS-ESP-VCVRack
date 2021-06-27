@@ -1,8 +1,8 @@
-# MTS-ESP VCVRack Pug-in
+# MTS-ESP VCVRack Plugin
 
-<img align="left" src="images/all.png">
+<img src="images/all.png" width=500>
 
-A collection of modules for using MTS-ESP for microtuning in [VCV Rack](https://github.com/VCVRack/Rack) virtual module synthesizer.
+A collection of modules for using [MTS-ESP](https://github.com/ODDSound/MTS-ESP) for microtuning in [VCV Rack](https://github.com/VCVRack/Rack) virtual module synthesizer.
 
 To load an MTS-ESP master plugin in VCVRack, such as ODDSound [MTS-ESP Master](https://oddsound.com/mtsespsuite.php) or [MTS-ESP Mini](https://oddsound.com/mtsespmini.php), you will need [VCV Host](https://vcvrack.com/Host).  Alternatively load an MTS-ESP master plug-in into a DAW running on the same computer, since MTS-ESP supports IPC.
 
