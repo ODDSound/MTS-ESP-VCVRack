@@ -72,6 +72,19 @@ struct MIDI_CV_MTS_ESP : Module {
 
 	MIDI_CV_MTS_ESP() {
 		config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
+        configOutput(CV_OUTPUT, "1V/oct pitch");
+        configOutput(GATE_OUTPUT, "Gate");
+        configOutput(VELOCITY_OUTPUT, "Velocity");
+        configOutput(AFTERTOUCH_OUTPUT, "Aftertouch");
+        configOutput(PITCH_OUTPUT, "Pitch wheel");
+        configOutput(MOD_OUTPUT, "Mod wheel");
+        configOutput(CLOCK_OUTPUT, "Clock");
+        configOutput(CLOCK_DIV_OUTPUT, "Clock divider");
+        configOutput(RETRIGGER_OUTPUT, "Retrigger");
+        configOutput(START_OUTPUT, "Start trigger");
+        configOutput(STOP_OUTPUT, "Stop trigger");
+        configOutput(CONTINUE_OUTPUT, "Continue trigger");
+        configLight(CONNECTED_LIGHT, "MTS-ESP connected");
 		heldNotes.reserve(128);
 		for (int c = 0; c < 16; c++) {
 			pitchFilters[c].setTau(1 / 30.f);
@@ -113,10 +126,10 @@ struct MIDI_CV_MTS_ESP : Module {
 
 	void process(const ProcessArgs& args) override {
 	
-		lights[CONNECTED_LIGHT].setBrightness(MTS_HasMaster(mtsClient)?1.f:0.1f);
+		lights[CONNECTED_LIGHT].setBrightness(MTS_HasMaster(mtsClient) ? 1.f : 0.1f);
 		
 		midi::Message msg;
-		while (midiInput.shift(&msg)) {
+		while (midiInput.tryPop(&msg, args.frame)) {
 			processMessage(msg);
 		}
 
@@ -156,6 +169,11 @@ struct MIDI_CV_MTS_ESP : Module {
 		outputs[STOP_OUTPUT].setVoltage(stopPulse.process(args.sampleTime) ? 10.f : 0.f);
 		outputs[CONTINUE_OUTPUT].setVoltage(continuePulse.process(args.sampleTime) ? 10.f : 0.f);
 	}
+    
+    void processBypass(const ProcessArgs& args) override {
+        lights[CONNECTED_LIGHT].setBrightness(MTS_HasMaster(mtsClient) ? 1.f : 0.1f);
+        Module::processBypass(args);
+    }
 
 	void processMessage(midi::Message msg) {
 		// DEBUG("MIDI: %01x %01x %02x %02x", msg.getStatus(), msg.getChannel(), msg.getNote(), msg.getValue());
@@ -538,9 +556,9 @@ struct MIDI_CV_MTS_ESPPanicItem : MenuItem {
 	}
 };
 
-struct MIDI_CV_MTS_ESP_MidiWidget : MidiWidget {
+struct MIDI_CV_MTS_ESP_MidiDisplay : MidiDisplay {
 	void setMidiPort(midi::Port* port) {
-		MidiWidget::setMidiPort(port);
+		MidiDisplay::setMidiPort(port);
 		driverChoice->bgColor = nvgRGB(0x16, 0x2e, 0x40);
 		driverChoice->color = nvgRGB(0xf0, 0xf0, 0xf0);
 		deviceChoice->bgColor = nvgRGB(0x16, 0x2e, 0x40);
@@ -576,10 +594,10 @@ struct MIDI_CV_MTS_ESPWidget : ModuleWidget {
 		addOutput(createOutput<PJ301MPort>(mm2px(Vec(16.214, 108.144)), module, MIDI_CV_MTS_ESP::STOP_OUTPUT));
 		addOutput(createOutput<PJ301MPort>(mm2px(Vec(27.8143, 108.144)), module, MIDI_CV_MTS_ESP::CONTINUE_OUTPUT));
 
-		MIDI_CV_MTS_ESP_MidiWidget* midiWidget = createWidget<MIDI_CV_MTS_ESP_MidiWidget>(mm2px(Vec(3.41891, 17.8373)));
-		midiWidget->box.size = mm2px(Vec(33.840, 28));
-		midiWidget->setMidiPort(module ? &module->midiInput : NULL);
-		addChild(midiWidget);
+		MIDI_CV_MTS_ESP_MidiDisplay* midiDisplay = createWidget<MIDI_CV_MTS_ESP_MidiDisplay>(mm2px(Vec(3.41891, 17.8373)));
+		midiDisplay->box.size = mm2px(Vec(33.840, 28));
+		midiDisplay->setMidiPort(module ? &module->midiInput : NULL);
+		addChild(midiDisplay);
 	}
 
 	void appendContextMenu(Menu* menu) override {

@@ -2,11 +2,6 @@
 #include "libMTSClient.h"
 #include <algorithm>
 
-struct CKSSThreeNoRandom : CKSSThree {
-	void randomize () override {
-	}
-};
-
 struct Quantizer_MTS_ESP : Module {
 	enum ParamIds {
 		ROUNDING_PARAM,
@@ -31,6 +26,7 @@ struct Quantizer_MTS_ESP : Module {
 	MTSClient *mtsClient = 0;
 	
 	bool hasMaster = false;
+    bool bypassed = false;
 	int roundingMode = 0;
 	double freqs[128];
 	float cv_out[16];
@@ -42,6 +38,12 @@ struct Quantizer_MTS_ESP : Module {
 	Quantizer_MTS_ESP() {
 		config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
 		configParam(ROUNDING_PARAM, -1.0, 1.0, 0.0, "Rounding", "");
+		getParamQuantity(ROUNDING_PARAM)->randomizeEnabled = false;
+        configInput(CV_IN_INPUT, "1V/oct pitch");
+        configOutput(CV_OUT_OUTPUT, "1V/oct pitch");
+        configOutput(TRIGGER_OUTPUT, "Trigger");
+        configLight(CONNECTED_LIGHT, "MTS-ESP Connected");
+        configBypass(CV_IN_INPUT, CV_OUT_OUTPUT);
 		mtsClient = MTS_RegisterClient();
 		for (int i = 0; i < 128; i++) freqs[i] = 440. * pow(2., (i-69.) / 12.);
 	}
@@ -51,14 +53,13 @@ struct Quantizer_MTS_ESP : Module {
 	}
 
 	void process(const ProcessArgs& args) override {
-
 		bool lastHasMaster = hasMaster;
 		hasMaster = mtsClient && MTS_HasMaster(mtsClient);
 		
 		int lastRoundingMode = roundingMode;
 		roundingMode = std::round(params[ROUNDING_PARAM].getValue());
 
-		lights[CONNECTED_LIGHT].setBrightness(hasMaster?1.f:0.1f);
+		lights[CONNECTED_LIGHT].setBrightness(hasMaster ? 1.f : 0.1f);
 
 		bool throttle = false;
 		const float rateLimiterPeriod = 0.005f;
@@ -67,9 +68,11 @@ struct Quantizer_MTS_ESP : Module {
 			rateLimiterPhase -= 1.f;
 		}
 		else {
-			throttle = hasMaster && (hasMaster == lastHasMaster) && (roundingMode == lastRoundingMode);
+			throttle = hasMaster && (hasMaster == lastHasMaster) && (roundingMode == lastRoundingMode) && !bypassed;
 		}
 
+        bypassed = false;
+        
 		int channels = inputs[CV_IN_INPUT].getChannels();
 
 		if (throttle) {
@@ -145,6 +148,13 @@ struct Quantizer_MTS_ESP : Module {
 		outputs[CV_OUT_OUTPUT].setChannels(channels);
 		outputs[TRIGGER_OUTPUT].setChannels(channels);
 	}
+    
+    void processBypass(const ProcessArgs& args) override {
+        hasMaster = mtsClient && MTS_HasMaster(mtsClient);
+        lights[CONNECTED_LIGHT].setBrightness(hasMaster ? 1.f : 0.1f);
+        bypassed = true;
+        Module::processBypass(args);
+    }
 };
 
 struct Quantizer_MTS_ESPWidget : ModuleWidget {
@@ -157,7 +167,7 @@ struct Quantizer_MTS_ESPWidget : ModuleWidget {
 		
 		addChild(createLightCentered<SmallLight<GreenLight>>(mm2px(Vec(7.526, 18.)), module, Quantizer_MTS_ESP::CONNECTED_LIGHT));
 
-		addParam(createParam<CKSSThreeNoRandom>(mm2px(Vec(1., 53.679)), module, Quantizer_MTS_ESP::ROUNDING_PARAM));
+		addParam(createParam<CKSSThree>(mm2px(Vec(1., 53.679)), module, Quantizer_MTS_ESP::ROUNDING_PARAM));
 		
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.526, 73.409)), module, Quantizer_MTS_ESP::CV_IN_INPUT));
 		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(7.526, 91.386)), module, Quantizer_MTS_ESP::CV_OUT_OUTPUT));

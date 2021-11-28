@@ -19,11 +19,6 @@ struct TransposeParamQuantity : RoundedDisplayParamQuantity {
 	}
 };
 
-struct CKSSNoRandom : CKSS {
-	void randomize () override {
-	}
-};
-
 struct WhiteKnobLarge : RoundKnob {
 	WhiteKnobLarge() {
 		setSvg(APP->window->loadSvg(asset::plugin(pluginInstance, "res/comp/WhiteKnobLarge.svg")));
@@ -71,6 +66,13 @@ struct Interval : Module {
 		configParam<TransposeParamQuantity>(TRANSPOSE_PARAM, -9999.f, 9999.f, 0.f, "Transpose");
 		configParam(BEND_PARAM, -1.f, 1.f, 0.f, "Bend");
 		configParam(INTERVAL_MODE_PARAM, 0.f, 1.f, 1.f, "Interval Mode");
+        getParamQuantity(INTERVAL_MODE_PARAM)->randomizeEnabled = false;
+        configInput(CV_IN_INPUT, "1V/oct pitch");
+        configInput(BEND_INPUT, "Bend CV");
+        configInput(TRANSPOSE_INPUT, "Transpose CV");
+        configOutput(THRU_OUTPUT, "1V/oct pitch thru");
+        configOutput(CV_OUT_OUTPUT, "1V/oct pitch");
+        configBypass(CV_IN_INPUT, CV_OUT_OUTPUT);
 	}
 	
 	virtual ~Interval() {
@@ -144,10 +146,8 @@ struct Interval : Module {
 struct TransposeDisplayWidget : TransparentWidget {
 
 	int *value = 0;
-	std::shared_ptr<Font> font = APP->window->loadFont(asset::plugin(pluginInstance, "res/fonts/Segment7Standard.ttf"));
 
 	void draw(const DrawArgs& args) override {
-		// Background
 		NVGcolor backgroundColor = nvgRGB(0x16, 0x2e, 0x40);
 		NVGcolor borderColor = nvgRGB(0x10, 0x10, 0x10);
 		nvgBeginPath(args.vg);
@@ -157,33 +157,63 @@ struct TransposeDisplayWidget : TransparentWidget {
 		nvgStrokeWidth(args.vg, 1.5);
 		nvgStrokeColor(args.vg, borderColor);
 		nvgStroke(args.vg);
-		// text
-		if (value) {
-			nvgFontSize(args.vg, 16);
-			nvgFontFaceId(args.vg, font->handle);
-			nvgTextLetterSpacing(args.vg, 2);
-			std::stringstream to_display;
-			to_display << std::right << std::setw(5) << *value;
-			Vec textPos = Vec(1.f, 16.5f);
-			NVGcolor textColor = nvgRGB(0x80, 0x80, 0x80);
-			nvgFillColor(args.vg, textColor);
-			nvgText(args.vg, textPos.x, textPos.y, to_display.str().c_str(), NULL);
-		}
 	}
+    
+    void drawLayer(const DrawArgs& args, int layer) override {
+        if (layer == 1 && value) {
+            std::shared_ptr<Font> font = APP->window->loadFont(asset::plugin(pluginInstance, "res/fonts/Segment7Standard.ttf"));
+            if (font) {
+                nvgFontSize(args.vg, 16);
+                nvgFontFaceId(args.vg, font->handle);
+                nvgTextLetterSpacing(args.vg, 2);
+                std::stringstream to_display;
+                to_display << std::right << std::setw(5) << *value;
+                Vec textPos = Vec(1.f, 16.5f);
+                NVGcolor textColor = nvgRGB(0x80, 0x80, 0x80);
+                nvgFillColor(args.vg, textColor);
+                nvgText(args.vg, textPos.x, textPos.y, to_display.str().c_str(), NULL);
+            }
+        }
+        Widget::drawLayer(args, layer);
+    }
 };
 
 struct ParamDisplayWidget : Knob {
 
 	float textX = 4.f;
-	std::shared_ptr<Font> font = APP->window->loadFont(asset::plugin(pluginInstance, "res/fonts/Segment7Standard.ttf"));
 
 	virtual void get_display_string(std::stringstream& to_display) {
+        ParamQuantity* paramQuantity = getParamQuantity();
 		if (paramQuantity)
 			to_display << (paramQuantity->getValue());
 	}
+    
+    void onDragMove(const event::DragMove& e) override {
+        if (e.button != GLFW_MOUSE_BUTTON_LEFT)
+            return;
+        
+        ParamQuantity* paramQuantity = getParamQuantity();
+        if (paramQuantity) {
+            float delta = (horizontal ? e.mouseDelta.x : -e.mouseDelta.y);
+            delta *= 0.0015f;
+            delta *= speed;
+            delta *= paramQuantity->getRange();
+            
+            int mods = APP->window->getMods();
+            if ((mods & RACK_MOD_MASK) == RACK_MOD_CTRL) {
+                delta /= 16.f;
+            }
+            if ((mods & RACK_MOD_MASK) == (RACK_MOD_CTRL | GLFW_MOD_SHIFT)) {
+                delta /= 256.f;
+            }
+            
+            paramQuantity->setValue(paramQuantity->getValue() + delta);
+        }
+        
+        ParamWidget::onDragMove(e);
+    }
 
 	void draw(const DrawArgs& args) override {
-		// Background
 		NVGcolor backgroundColor = nvgRGB(0x16, 0x2e, 0x40);
 		NVGcolor borderColor = nvgRGB(0x10, 0x10, 0x10);
 		nvgBeginPath(args.vg);
@@ -193,48 +223,46 @@ struct ParamDisplayWidget : Knob {
 		nvgStrokeWidth(args.vg, 1.5);
 		nvgStrokeColor(args.vg, borderColor);
 		nvgStroke(args.vg);
-		// text
-		nvgFontSize(args.vg, 16);
-		nvgFontFaceId(args.vg, font->handle);
-		nvgTextLetterSpacing(args.vg, 2);
-		std::stringstream to_display;
-		get_display_string(to_display);
-		Vec textPos = Vec(textX, 16.5f);
-		NVGcolor textColor = nvgRGB(0x4c, 0xa0, 0xdf);
-		nvgFillColor(args.vg, textColor);
-		nvgText(args.vg, textPos.x, textPos.y, to_display.str().c_str(), NULL);
 	}
+    
+    void drawLayer(const DrawArgs& args, int layer) override {
+        if (layer == 1) {
+            std::shared_ptr<Font> font = APP->window->loadFont(asset::plugin(pluginInstance, "res/fonts/Segment7Standard.ttf"));
+            if (font) {
+                nvgFontSize(args.vg, 16);
+                nvgFontFaceId(args.vg, font->handle);
+                nvgTextLetterSpacing(args.vg, 2);
+                std::stringstream to_display;
+                get_display_string(to_display);
+                Vec textPos = Vec(textX, 16.5f);
+                NVGcolor textColor = nvgRGB(0x4c, 0xa0, 0xdf);
+                nvgFillColor(args.vg, textColor);
+                nvgText(args.vg, textPos.x, textPos.y, to_display.str().c_str(), NULL);
+            }
+        }
+        Widget::drawLayer(args, layer);
+    }
 };
 
 struct RatioParamDisplayWidget : ParamDisplayWidget {
-	RatioParamDisplayWidget() {
-		speed = 0.00001;
-	};
-	
 	void get_display_string(std::stringstream& to_display) override {
+        ParamQuantity* paramQuantity = getParamQuantity();
 		if (paramQuantity)
 			to_display << std::right << std::setw(7) << std::setprecision(7) << std::round(paramQuantity->getValue());
 	}
 };
 
 struct CentsParamDisplayWidget : ParamDisplayWidget {
-	CentsParamDisplayWidget() {
-		speed = 0.1;
-	};
-	
 	void get_display_string(std::stringstream& to_display) override {
+        ParamQuantity* paramQuantity = getParamQuantity();
 		if (paramQuantity)
 			to_display << std::right << std::setw(7) << std::setprecision(1) << std::fixed << (paramQuantity->getValue());
 	}
 };
 
 struct TransposeParamDisplayWidget : ParamDisplayWidget {
-	TransposeParamDisplayWidget() {
-		speed = 0.001;
-		textX = 1.f;
-	};
-	
 	void get_display_string(std::stringstream& to_display) override {
+        ParamQuantity* paramQuantity = getParamQuantity();
 		if (paramQuantity)
 			to_display << std::right << std::setw(5) << (int) std::round(paramQuantity->getValue());
 	}
@@ -255,35 +283,28 @@ struct IntervalWidget : ModuleWidget {
 		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
 		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
 		
-		addParam(createParam<CKSSNoRandom>(mm2px(Vec(10., 19.6)), module, Interval::INTERVAL_MODE_PARAM));
-
-		displayNum = new RatioParamDisplayWidget();
-		displayNum->box.pos = Vec(9, 85);
+		addParam(createParam<CKSS>(mm2px(Vec(10., 19.6)), module, Interval::INTERVAL_MODE_PARAM));
+        
+        displayNum = createParam<RatioParamDisplayWidget>(Vec(9, 85), module, Interval::RATIO_NUM_PARAM);
 		displayNum->box.size = Vec(87, 20);
-    	if (module)
-			displayNum->paramQuantity = module->paramQuantities[Interval::RATIO_NUM_PARAM];
-		addChild(displayNum);
+        displayNum->speed = 0.00001;
+        addParam(displayNum);
 		
-		displayDen = new RatioParamDisplayWidget();
-		displayDen->box.pos = Vec(9, 110);
+        displayDen = createParam<RatioParamDisplayWidget>(Vec(9, 110), module, Interval::RATIO_DEN_PARAM);
 		displayDen->box.size = Vec(87, 20);
-    	if (module)
-			displayDen->paramQuantity = module->paramQuantities[Interval::RATIO_DEN_PARAM];
-		addChild(displayDen);
+        displayDen->speed = 0.00001;
+		addParam(displayDen);
 		
-		displayCents = new CentsParamDisplayWidget();
-		displayCents->box.pos = Vec(9, 85);
+        displayCents = createParam<CentsParamDisplayWidget>(Vec(9, 85), module, Interval::CENTS_PARAM);
 		displayCents->box.size = Vec(87, 20);
-		if (module)
-			displayCents->paramQuantity = module->paramQuantities[Interval::CENTS_PARAM];
-		addChild(displayCents);
+        displayCents->speed = 0.1;
+		addParam(displayCents);
 		
-		ParamDisplayWidget *displayTranspose = new TransposeParamDisplayWidget();
-		displayTranspose->box.pos = Vec(35, 166);
+        TransposeParamDisplayWidget* displayTranspose = createParam<TransposeParamDisplayWidget>(Vec(35, 166), module, Interval::TRANSPOSE_PARAM);
 		displayTranspose->box.size = Vec(61, 20);
-		if (module)
-			displayTranspose->paramQuantity = module->paramQuantities[Interval::TRANSPOSE_PARAM];
-		addChild(displayTranspose);
+        displayTranspose->speed = 0.001;
+        displayTranspose->textX = 1.f;
+		addParam(displayTranspose);
 		
 		TransposeDisplayWidget *displayCVTranspose = new TransposeDisplayWidget();
 		displayCVTranspose->box.pos = Vec(35, 191);

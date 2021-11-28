@@ -3,7 +3,7 @@
 
 
 struct MidiOutput : dsp::MidiGenerator<PORT_MAX_CHANNELS>, midi::Output {
-	void onMessage(midi::Message message) override {
+	void onMessage(const midi::Message &message) override {
 		midi::Output::sendMessage(message);
 	}
 
@@ -48,6 +48,19 @@ struct CV_MIDI_MTS_ESP : Module {
 
 	CV_MIDI_MTS_ESP() {
 		config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
+        configInput(PITCH_INPUT, "1V/oct pitch");
+        configInput(GATE_INPUT, "Gate");
+        configInput(VEL_INPUT, "Velocity");
+        configInput(AFT_INPUT, "Aftertouch");
+        configInput(PW_INPUT, "Pitch wheel");
+        configInput(MW_INPUT, "Mod wheel");
+        configInput(CLK_INPUT, "Clock");
+        configInput(VOL_INPUT, "Volume");
+        configInput(PAN_INPUT, "Pan");
+        configInput(START_INPUT, "Start trigger");
+        configInput(STOP_INPUT, "Stop trigger");
+        configInput(CONTINUE_INPUT, "Continue trigger");
+        configLight(CONNECTED_LIGHT, "MTS-ESP Connected");
 		mtsClient = MTS_RegisterClient();
 		onReset();
 	}
@@ -63,7 +76,7 @@ struct CV_MIDI_MTS_ESP : Module {
 
 	void process(const ProcessArgs& args) override {
 		
-		lights[CONNECTED_LIGHT].setBrightness(MTS_HasMaster(mtsClient)?1.f:0.1f);
+		lights[CONNECTED_LIGHT].setBrightness(MTS_HasMaster(mtsClient) ? 1.f : 0.1f);
 
 		const float rateLimiterPeriod = 0.005f;
 		rateLimiterPhase += args.sampleTime / rateLimiterPeriod;
@@ -121,6 +134,11 @@ struct CV_MIDI_MTS_ESP : Module {
 		bool cont = inputs[CONTINUE_INPUT].getVoltage() >= 1.f;
 		midiOutput.setContinue(cont);
 	}
+    
+    void processBypass(const ProcessArgs& args) override {
+        lights[CONNECTED_LIGHT].setBrightness(MTS_HasMaster(mtsClient) ? 1.f : 0.1f);
+        Module::processBypass(args);
+    }
 
 	json_t* dataToJson() override {
 		json_t* rootJ = json_object();
@@ -143,9 +161,9 @@ struct CV_MIDI_MTS_ESPPanicItem : MenuItem {
 	}
 };
 
-struct CV_MIDI_MTS_ESP_MidiWidget : MidiWidget {
+struct CV_MIDI_MTS_ESP_MidiDisplay : MidiDisplay {
 	void setMidiPort(midi::Port* port) {
-		MidiWidget::setMidiPort(port);
+		MidiDisplay::setMidiPort(port);
 		driverChoice->bgColor = nvgRGB(0x16, 0x2e, 0x40);
 		driverChoice->color = nvgRGB(0xf0, 0xf0, 0xf0);
 		deviceChoice->bgColor = nvgRGB(0x16, 0x2e, 0x40);
@@ -180,10 +198,10 @@ struct CV_MIDI_MTS_ESPWidget : ModuleWidget {
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(20, 112)), module, CV_MIDI_MTS_ESP::STOP_INPUT));
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(32, 112)), module, CV_MIDI_MTS_ESP::CONTINUE_INPUT));
 
-		CV_MIDI_MTS_ESP_MidiWidget* midiWidget = createWidget<CV_MIDI_MTS_ESP_MidiWidget>(mm2px(Vec(3.41891, 17.8373)));
-		midiWidget->box.size = mm2px(Vec(33.840, 28));
-		midiWidget->setMidiPort(module ? &module->midiOutput : NULL);
-		addChild(midiWidget);
+		CV_MIDI_MTS_ESP_MidiDisplay* midiDisplay = createWidget<CV_MIDI_MTS_ESP_MidiDisplay>(mm2px(Vec(3.41891, 17.8373)));
+		midiDisplay->box.size = mm2px(Vec(33.840, 28));
+		midiDisplay->setMidiPort(module ? &module->midiOutput : NULL);
+		addChild(midiDisplay);
 	}
 
 	void appendContextMenu(Menu* menu) override {
