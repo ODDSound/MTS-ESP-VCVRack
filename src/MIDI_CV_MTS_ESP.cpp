@@ -32,6 +32,7 @@ struct MIDI_CV_MTS_ESP : Module {
 
 	midi::InputQueue midiInput;
 
+    bool smooth;
 	int channels;
 	enum PolyMode {
 		ROTATE_MODE,
@@ -99,6 +100,7 @@ struct MIDI_CV_MTS_ESP : Module {
 	}
 
 	void onReset() override {
+        smooth = true;
 		channels = 1;
 		polyMode = ROTATE_MODE;
 		clockDivision = 24;
@@ -140,7 +142,7 @@ struct MIDI_CV_MTS_ESP : Module {
 		outputs[RETRIGGER_OUTPUT].setChannels(channels);
 		for (int c = 0; c < channels; c++) {
 			float note = notes[c];
-			if (mtsClient) note += MTS_RetuningInSemitones(mtsClient, notes[c], -1);
+            if (mtsClient) note += MTS_RetuningInSemitones(mtsClient, notes[c], polyMode == MPE_MODE ? -1 : c);
 			outputs[CV_OUTPUT].setVoltage((note - 60.f) / 12.f, c);
 			outputs[GATE_OUTPUT].setVoltage(gates[c] ? 10.f : 0.f, c);
 			outputs[VELOCITY_OUTPUT].setVoltage(rescale(velocities[c], 0, 127, 0.f, 10.f), c);
@@ -148,20 +150,26 @@ struct MIDI_CV_MTS_ESP : Module {
 			outputs[RETRIGGER_OUTPUT].setVoltage(retriggerPulses[c].process(args.sampleTime) ? 10.f : 0.f, c);
 		}
 
-		if (polyMode == MPE_MODE) {
-			for (int c = 0; c < channels; c++) {
-				outputs[PITCH_OUTPUT].setChannels(channels);
-				outputs[MOD_OUTPUT].setChannels(channels);
-				outputs[PITCH_OUTPUT].setVoltage(pitchFilters[c].process(args.sampleTime, rescale(pitches[c], 0, 1 << 14, -5.f, 5.f)), c);
-				outputs[MOD_OUTPUT].setVoltage(modFilters[c].process(args.sampleTime, rescale(mods[c], 0, 127, 0.f, 10.f)), c);
-			}
-		}
-		else {
-			outputs[PITCH_OUTPUT].setChannels(1);
-			outputs[MOD_OUTPUT].setChannels(1);
-			outputs[PITCH_OUTPUT].setVoltage(pitchFilters[0].process(args.sampleTime, rescale(pitches[0], 0, 1 << 14, -5.f, 5.f)));
-			outputs[MOD_OUTPUT].setVoltage(modFilters[0].process(args.sampleTime, rescale(mods[0], 0, 127, 0.f, 10.f)));
-		}
+        int wheelChannels = (polyMode == MPE_MODE) ? 16 : 1;
+        outputs[PITCH_OUTPUT].setChannels(wheelChannels);
+        outputs[MOD_OUTPUT].setChannels(wheelChannels);
+        for (int c = 0; c < wheelChannels; c++) {
+            float pw = ((int) pitches[c] - 8192) / 8191.f;
+            pw = clamp(pw, -1.f, 1.f);
+            if (smooth)
+                pw = pitchFilters[c].process(args.sampleTime, pw);
+            else
+                pitchFilters[c].out = pw;
+            outputs[PITCH_OUTPUT].setVoltage(pw * 5.f);
+            
+            float mod = mods[c] / 127.f;
+            mod = clamp(mod, 0.f, 1.f);
+            if (smooth)
+                mod = modFilters[c].process(args.sampleTime, mod);
+            else
+                modFilters[c].out = mod;
+            outputs[MOD_OUTPUT].setVoltage(mod * 10.f);
+        }
 
 		outputs[CLOCK_OUTPUT].setVoltage(clockPulse.process(args.sampleTime) ? 10.f : 0.f);
 		outputs[CLOCK_DIV_OUTPUT].setVoltage(clockDividerPulse.process(args.sampleTime) ? 10.f : 0.f);
@@ -186,9 +194,11 @@ struct MIDI_CV_MTS_ESP : Module {
 			// note on
 			case 0x9: {
                 int c = msg.getChannel();
-				if (!MTS_ShouldFilterNote(mtsClient, msg.getNote(), c) && msg.getValue() > 0) {
-					pressNote(msg.getNote(), &c);
-					velocities[c] = msg.getValue();
+                if (msg.getValue() > 0) {
+                    if (!MTS_ShouldFilterNote(mtsClient, msg.getNote(), polyMode == MPE_MODE ? -1 : c)) {
+                        pressNote(msg.getNote(), &c);
+                        velocities[c] = msg.getValue();
+                    }
 				}
 				else {
 					// For some reason, some keyboards send a "note on" event with a velocity of 0 to signal that the key has been released.
@@ -233,7 +243,7 @@ struct MIDI_CV_MTS_ESP : Module {
 		}
 	}
 
-	void processCC(midi::Message msg) {
+	void processCC(const midi::Message &msg) {
 		switch (msg.getNote()) {
 			// mod
 			case 0x01: {
@@ -247,11 +257,17 @@ struct MIDI_CV_MTS_ESP : Module {
 				else
 					releasePedal();
 			} break;
+            // all notes off (panic)
+            case 0x7b: {
+                if (msg.getValue() == 0) {
+                    panic();
+                }
+            } break;
 			default: break;
 		}
 	}
 
-	void processSystem(midi::Message msg) {
+	void processSystem(const midi::Message &msg) {
 		switch (msg.getChannel()) {
 			// Timing
 			case 0x8: {
@@ -419,6 +435,7 @@ struct MIDI_CV_MTS_ESP : Module {
 
 	json_t* dataToJson() override {
 		json_t* rootJ = json_object();
+        json_object_set_new(rootJ, "smooth", json_boolean(smooth));
 		json_object_set_new(rootJ, "channels", json_integer(channels));
 		json_object_set_new(rootJ, "polyMode", json_integer(polyMode));
 		json_object_set_new(rootJ, "clockDivision", json_integer(clockDivision));
@@ -432,6 +449,10 @@ struct MIDI_CV_MTS_ESP : Module {
 	}
 
 	void dataFromJson(json_t* rootJ) override {
+        json_t* smoothJ = json_object_get(rootJ, "smooth");
+        if (smoothJ)
+            smooth = json_boolean_value(smoothJ);
+
 		json_t* channelsJ = json_object_get(rootJ, "channels");
 		if (channelsJ)
 			setChannels(json_integer_value(channelsJ));
@@ -462,7 +483,7 @@ struct MIDI_CV_MTS_ESP : Module {
 struct ClockDivisionValueItem : MenuItem {
 	MIDI_CV_MTS_ESP* module;
 	int clockDivision;
-	void onAction(const event::Action& e) override {
+	void onAction(const ActionEvent& e) override {
 		module->clockDivision = clockDivision;
 	}
 };
@@ -490,7 +511,7 @@ struct ClockDivisionItem : MenuItem {
 struct ChannelValueItem : MenuItem {
 	MIDI_CV_MTS_ESP* module;
 	int channels;
-	void onAction(const event::Action& e) override {
+	void onAction(const ActionEvent& e) override {
 		module->setChannels(channels);
 	}
 };
@@ -519,7 +540,7 @@ struct ChannelItem : MenuItem {
 struct PolyModeValueItem : MenuItem {
 	MIDI_CV_MTS_ESP* module;
 	MIDI_CV_MTS_ESP::PolyMode polyMode;
-	void onAction(const event::Action& e) override {
+	void onAction(const ActionEvent& e) override {
 		module->setPolyMode(polyMode);
 	}
 };
@@ -551,7 +572,7 @@ struct PolyModeItem : MenuItem {
 
 struct MIDI_CV_MTS_ESPPanicItem : MenuItem {
 	MIDI_CV_MTS_ESP* module;
-	void onAction(const event::Action& e) override {
+	void onAction(const ActionEvent& e) override {
 		module->panic();
 	}
 };
@@ -603,7 +624,9 @@ struct MIDI_CV_MTS_ESPWidget : ModuleWidget {
 	void appendContextMenu(Menu* menu) override {
 		MIDI_CV_MTS_ESP* module = dynamic_cast<MIDI_CV_MTS_ESP*>(this->module);
 
-		menu->addChild(new MenuEntry);
+		menu->addChild(new MenuSeparator);
+        
+        menu->addChild(createBoolPtrMenuItem("Smooth pitch/mod wheel", "", &module->smooth));
 
 		ClockDivisionItem* clockDivisionItem = new ClockDivisionItem;
 		clockDivisionItem->text = "CLK/N divider";
