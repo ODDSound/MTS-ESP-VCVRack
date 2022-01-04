@@ -142,7 +142,7 @@ struct MIDI_CV_MTS_ESP : Module {
 		outputs[RETRIGGER_OUTPUT].setChannels(channels);
 		for (int c = 0; c < channels; c++) {
 			float note = notes[c];
-            if (mtsClient) note += MTS_RetuningInSemitones(mtsClient, notes[c], polyMode == MPE_MODE ? -1 : c);
+            if (mtsClient) note += MTS_RetuningInSemitones(mtsClient, notes[c], -1);
 			outputs[CV_OUTPUT].setVoltage((note - 60.f) / 12.f, c);
 			outputs[GATE_OUTPUT].setVoltage(gates[c] ? 10.f : 0.f, c);
 			outputs[VELOCITY_OUTPUT].setVoltage(rescale(velocities[c], 0, 127, 0.f, 10.f), c);
@@ -195,7 +195,7 @@ struct MIDI_CV_MTS_ESP : Module {
 			case 0x9: {
                 int c = msg.getChannel();
                 if (msg.getValue() > 0) {
-                    if (!MTS_ShouldFilterNote(mtsClient, msg.getNote(), polyMode == MPE_MODE ? -1 : c)) {
+                    if (!MTS_ShouldFilterNote(mtsClient, msg.getNote(), -1)) {
                         pressNote(msg.getNote(), &c);
                         velocities[c] = msg.getValue();
                     }

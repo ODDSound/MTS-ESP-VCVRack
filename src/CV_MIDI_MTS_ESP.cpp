@@ -93,7 +93,7 @@ struct CV_MIDI_MTS_ESP : Module {
             
             double freq = 440. * pow(2., inputs[PITCH_INPUT].getVoltage(c) - 0.75);
             int note;
-            if (mtsClient && MTS_HasMaster(mtsClient)) note = MTS_FrequencyToNote(mtsClient, freq, c);
+            if (mtsClient && MTS_HasMaster(mtsClient)) note = MTS_FrequencyToNote(mtsClient, freq, -1);
             else note = (int) std::round(inputs[PITCH_INPUT].getVoltage(c) * 12.f + 60.f);
 			note = clamp(note, 0, 127);
 			bool gate = inputs[GATE_INPUT].getPolyVoltage(c) >= 1.f;
