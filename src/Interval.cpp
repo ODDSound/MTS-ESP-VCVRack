@@ -65,7 +65,7 @@ struct Interval : Module {
 		configParam(CENTS_PARAM, -9999.9f, 9999.9f, 1200.f, "Cents", " cents");
 		configParam<TransposeParamQuantity>(TRANSPOSE_PARAM, -9999.f, 9999.f, 0.f, "Transpose");
 		configParam(BEND_PARAM, -1.f, 1.f, 0.f, "Bend");
-		configParam(INTERVAL_MODE_PARAM, 0.f, 1.f, 1.f, "Interval Mode");
+        configSwitch(INTERVAL_MODE_PARAM, 0.f, 1.f, 1.f, "Interval Mode", {"Cents", "Ratio"});
         getParamQuantity(INTERVAL_MODE_PARAM)->randomizeEnabled = false;
         configInput(CV_IN_INPUT, "1V/oct pitch");
         configInput(BEND_INPUT, "Bend CV");

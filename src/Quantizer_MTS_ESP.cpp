@@ -5,6 +5,7 @@
 struct Quantizer_MTS_ESP : Module {
 	enum ParamIds {
 		ROUNDING_PARAM,
+        MODE_PARAM,
 		NUM_PARAMS
 	};
 	enum InputIds {
@@ -28,6 +29,7 @@ struct Quantizer_MTS_ESP : Module {
 	bool hasMaster = false;
     bool bypassed = false;
 	int roundingMode = 0;
+    int mode = 0;
 	double freqs[128];
 	float cv_out[16];
 	float last_cv_in[16] = { 0.f };
@@ -37,8 +39,10 @@ struct Quantizer_MTS_ESP : Module {
 	
 	Quantizer_MTS_ESP() {
 		config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
-		configParam(ROUNDING_PARAM, -1.0, 1.0, 0.0, "Rounding", "");
+        configSwitch(ROUNDING_PARAM, -1.f, 1.f, 0.f, "Rounding", {"Down", "Nearest", "Up"});
 		getParamQuantity(ROUNDING_PARAM)->randomizeEnabled = false;
+        configSwitch(MODE_PARAM, 0.f, 1.f, 1.f, "Mode", {"Retune", "Quant"});
+        getParamQuantity(MODE_PARAM)->randomizeEnabled = false;
         configInput(CV_IN_INPUT, "1V/oct pitch");
         configOutput(CV_OUT_OUTPUT, "1V/oct pitch");
         configOutput(TRIGGER_OUTPUT, "Trigger");
@@ -58,6 +62,9 @@ struct Quantizer_MTS_ESP : Module {
 		
 		int lastRoundingMode = roundingMode;
 		roundingMode = std::round(params[ROUNDING_PARAM].getValue());
+        
+        int lastMode = mode;
+        mode = std::round(params[MODE_PARAM].getValue());
 
 		lights[CONNECTED_LIGHT].setBrightness(hasMaster ? 1.f : 0.1f);
 
@@ -68,7 +75,7 @@ struct Quantizer_MTS_ESP : Module {
 			rateLimiterPhase -= 1.f;
 		}
 		else {
-			throttle = hasMaster && (hasMaster == lastHasMaster) && (roundingMode == lastRoundingMode) && !bypassed;
+			throttle = hasMaster && (hasMaster == lastHasMaster) && (roundingMode == lastRoundingMode) && (mode == lastMode) && !bypassed;
 		}
 
         bypassed = false;
@@ -82,7 +89,7 @@ struct Quantizer_MTS_ESP : Module {
 		}
 		else if (hasMaster) {
 			
-			bool freqsUpdated = (hasMaster != lastHasMaster) || (roundingMode != lastRoundingMode);
+			bool freqsUpdated = (hasMaster != lastHasMaster) || (roundingMode != lastRoundingMode) || (mode != lastMode);
 			for (int i = 0; i < 128; i++) {
 				double f = MTS_NoteToFrequency(mtsClient, i, -1);
 				if (f != freqs[i]) {
@@ -97,7 +104,7 @@ struct Quantizer_MTS_ESP : Module {
 				if (!freqsUpdated && vin==last_cv_in[c]) {
 					cv_out[c] = last_cv_out[c];
 				}
-				else {			
+				else if (mode == 1) {
 					double freq = dsp::FREQ_C4 * pow(2., vin);
 					double qf = freq;
 					unsigned char iLower, iUpper; iLower=0; iUpper=0;
@@ -124,6 +131,15 @@ struct Quantizer_MTS_ESP : Module {
 					}			
 					cv_out[c] = log(qf/dsp::FREQ_C4) / ln2;
 				}
+                else {
+                    double pitch = (vin * 12.) + 60.;
+                    int note;
+                    if (roundingMode == -1) note = std::floor(pitch);
+                    else if (roundingMode == 1) note = std::ceil(pitch);
+                    else note = std::round(pitch);
+                    note = std::min(std::max(0, note), 127);
+                    cv_out[c] = log(freqs[note]/dsp::FREQ_C4) / ln2;
+                }
 				
 				last_cv_in[c] = vin;
 				
@@ -145,6 +161,7 @@ struct Quantizer_MTS_ESP : Module {
 				last_cv_in[c] = last_cv_out[c] = vin;
 			}
 		}
+        
 		outputs[CV_OUT_OUTPUT].setChannels(channels);
 		outputs[TRIGGER_OUTPUT].setChannels(channels);
 	}
@@ -167,6 +184,7 @@ struct Quantizer_MTS_ESPWidget : ModuleWidget {
 		
 		addChild(createLightCentered<SmallLight<GreenLight>>(mm2px(Vec(7.526, 18.)), module, Quantizer_MTS_ESP::CONNECTED_LIGHT));
 
+        addParam(createParam<CKSS>(mm2px(Vec(1., 41.59)), module, Quantizer_MTS_ESP::MODE_PARAM));
 		addParam(createParam<CKSSThree>(mm2px(Vec(1., 53.679)), module, Quantizer_MTS_ESP::ROUNDING_PARAM));
 		
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.526, 73.409)), module, Quantizer_MTS_ESP::CV_IN_INPUT));

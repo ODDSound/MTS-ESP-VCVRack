@@ -16,7 +16,7 @@ A version of the VCV Rack core CV-MIDI module with MTS-ESP Client support added.
 
 ## MTS-ESP Quantizer
 
-Quantizes pitch CV to the tuning defined in an MTS-ESP master plug-in, if loaded.  If not connected to an MTS-ESP master, no quantization will be applied.  A trigger output sends a trigger whenever the output CV changes.  This module is polyphonic.
+Quantizes or retunes pitch CV to the tuning defined in an MTS-ESP master plug-in, if loaded.  Retune mode quantizes to 12-TET and outputs the frequency mapped to the corresponding MIDI note.  If not connected to an MTS-ESP master, no quantization will be applied.  A trigger output sends a trigger whenever the output CV changes.  This module is polyphonic.
 
 ## Interval
 
