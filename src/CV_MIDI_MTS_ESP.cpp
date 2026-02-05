@@ -48,19 +48,19 @@ struct CV_MIDI_MTS_ESP : Module {
 
 	CV_MIDI_MTS_ESP() {
 		config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
-        configInput(PITCH_INPUT, "1V/oct pitch");
-        configInput(GATE_INPUT, "Gate");
-        configInput(VEL_INPUT, "Velocity");
-        configInput(AFT_INPUT, "Aftertouch");
-        configInput(PW_INPUT, "Pitch wheel");
-        configInput(MW_INPUT, "Mod wheel");
-        configInput(CLK_INPUT, "Clock");
-        configInput(VOL_INPUT, "Volume");
-        configInput(PAN_INPUT, "Pan");
-        configInput(START_INPUT, "Start trigger");
-        configInput(STOP_INPUT, "Stop trigger");
-        configInput(CONTINUE_INPUT, "Continue trigger");
-        configLight(CONNECTED_LIGHT, "MTS-ESP Connected");
+		configInput(PITCH_INPUT, "1V/oct pitch");
+		configInput(GATE_INPUT, "Gate");
+		configInput(VEL_INPUT, "Velocity");
+		configInput(AFT_INPUT, "Aftertouch");
+		configInput(PW_INPUT, "Pitch wheel");
+		configInput(MW_INPUT, "Mod wheel");
+		configInput(CLK_INPUT, "Clock");
+		configInput(VOL_INPUT, "Volume");
+		configInput(PAN_INPUT, "Pan");
+		configInput(START_INPUT, "Start trigger");
+		configInput(STOP_INPUT, "Stop trigger");
+		configInput(CONTINUE_INPUT, "Continue trigger");
+		configLight(CONNECTED_LIGHT, "MTS-ESP Connected");
 		mtsClient = MTS_RegisterClient();
 		onReset();
 	}
@@ -81,20 +81,19 @@ struct CV_MIDI_MTS_ESP : Module {
 		const float rateLimiterPeriod = 1 / 200.f;
 		bool rateLimiterTriggered = (rateLimiterTimer.process(args.sampleTime) >= rateLimiterPeriod);
 		if (rateLimiterTriggered)
-            rateLimiterTimer.time -= rateLimiterPeriod;
+			rateLimiterTimer.time -= rateLimiterPeriod;
 
-        midiOutput.setFrame(args.frame);
-        
+		midiOutput.setFrame(args.frame);
+
 		for (int c = 0; c < inputs[PITCH_INPUT].getChannels(); c++) {
 			int vel = (int) std::round(inputs[VEL_INPUT].getNormalPolyVoltage(10.f * 100 / 127, c) / 10.f * 127);
 			vel = clamp(vel, 0, 127);
 			midiOutput.setVelocity(vel, c);
 
-            
-            double freq = 440. * pow(2., inputs[PITCH_INPUT].getVoltage(c) - 0.75);
-            int note;
-            if (mtsClient && MTS_HasMaster(mtsClient)) note = MTS_FrequencyToNote(mtsClient, freq, -1);
-            else note = (int) std::round(inputs[PITCH_INPUT].getVoltage(c) * 12.f + 60.f);
+			double freq = 440. * pow(2., inputs[PITCH_INPUT].getVoltage(c) - 0.75);
+			int note;
+			if (mtsClient && MTS_HasMaster(mtsClient)) note = MTS_FrequencyToNote(mtsClient, freq, -1);
+			else note = (int) std::round(inputs[PITCH_INPUT].getVoltage(c) * 12.f + 60.f);
 			note = clamp(note, 0, 127);
 			bool gate = inputs[GATE_INPUT].getPolyVoltage(c) >= 1.f;
 			midiOutput.setNoteGate(note, gate, c);
@@ -104,24 +103,24 @@ struct CV_MIDI_MTS_ESP : Module {
 			midiOutput.setKeyPressure(aft, c);
 		}
 
-        if (rateLimiterTriggered) {
-            int pw = (int) std::round((inputs[PW_INPUT].getVoltage() + 5.f) / 10.f * 0x4000);
-            pw = clamp(pw, 0, 0x3fff);
-            midiOutput.setPitchWheel(pw);
+		if (rateLimiterTriggered) {
+			int pw = (int) std::round((inputs[PW_INPUT].getVoltage() + 5.f) / 10.f * 0x4000);
+			pw = clamp(pw, 0, 0x3fff);
+			midiOutput.setPitchWheel(pw);
 
-            int mw = (int) std::round(inputs[MW_INPUT].getVoltage() / 10.f * 127);
-            mw = clamp(mw, 0, 127);
-            midiOutput.setModWheel(mw);
+			int mw = (int) std::round(inputs[MW_INPUT].getVoltage() / 10.f * 127);
+			mw = clamp(mw, 0, 127);
+			midiOutput.setModWheel(mw);
 
-            int vol = (int) std::round(inputs[VOL_INPUT].getNormalVoltage(10.f) / 10.f * 127);
-            vol = clamp(vol, 0, 127);
-            midiOutput.setVolume(vol);
+			int vol = (int) std::round(inputs[VOL_INPUT].getNormalVoltage(10.f) / 10.f * 127);
+			vol = clamp(vol, 0, 127);
+			midiOutput.setVolume(vol);
 
-            int pan = (int) std::round((inputs[PAN_INPUT].getVoltage() + 5.f) / 10.f * 127);
-            pan = clamp(pan, 0, 127);
-            midiOutput.setPan(pan);
-        }
-        
+			int pan = (int) std::round((inputs[PAN_INPUT].getVoltage() + 5.f) / 10.f * 127);
+			pan = clamp(pan, 0, 127);
+			midiOutput.setPan(pan);
+		}
+
 		bool clk = inputs[CLK_INPUT].getVoltage() >= 1.f;
 		midiOutput.setClock(clk);
 
@@ -134,11 +133,11 @@ struct CV_MIDI_MTS_ESP : Module {
 		bool cont = inputs[CONTINUE_INPUT].getVoltage() >= 1.f;
 		midiOutput.setContinue(cont);
 	}
-    
-    void processBypass(const ProcessArgs& args) override {
-        lights[CONNECTED_LIGHT].setBrightness(MTS_HasMaster(mtsClient) ? 1.f : 0.1f);
-        Module::processBypass(args);
-    }
+
+	void processBypass(const ProcessArgs& args) override {
+		lights[CONNECTED_LIGHT].setBrightness(MTS_HasMaster(mtsClient) ? 1.f : 0.1f);
+		Module::processBypass(args);
+	}
 
 	json_t* dataToJson() override {
 		json_t* rootJ = json_object();
@@ -207,7 +206,7 @@ struct CV_MIDI_MTS_ESPWidget : ModuleWidget {
 	void appendContextMenu(Menu* menu) override {
 		CV_MIDI_MTS_ESP* module = dynamic_cast<CV_MIDI_MTS_ESP*>(this->module);
 
-        menu->addChild(new MenuSeparator);
+		menu->addChild(new MenuSeparator);
 
 		CV_MIDI_MTS_ESPPanicItem* panicItem = new CV_MIDI_MTS_ESPPanicItem;
 		panicItem->text = "Panic";
