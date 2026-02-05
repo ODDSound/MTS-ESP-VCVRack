@@ -152,14 +152,6 @@ struct CV_MIDI_MTS_ESP : Module {
 	}
 };
 
-
-struct CV_MIDI_MTS_ESPPanicItem : MenuItem {
-	CV_MIDI_MTS_ESP* module;
-	void onAction(const ActionEvent& e) override {
-		module->midiOutput.panic();
-	}
-};
-
 struct CV_MIDI_MTS_ESP_MidiDisplay : MidiDisplay {
 	void setMidiPort(midi::Port* port) {
 		MidiDisplay::setMidiPort(port);
@@ -207,11 +199,10 @@ struct CV_MIDI_MTS_ESPWidget : ModuleWidget {
 		CV_MIDI_MTS_ESP* module = dynamic_cast<CV_MIDI_MTS_ESP*>(this->module);
 
 		menu->addChild(new MenuSeparator);
-
-		CV_MIDI_MTS_ESPPanicItem* panicItem = new CV_MIDI_MTS_ESPPanicItem;
-		panicItem->text = "Panic";
-		panicItem->module = module;
-		menu->addChild(panicItem);
+		
+		menu->addChild(createMenuItem("Reset MIDI (Panic)", "",
+			[=]() {module->midiOutput.panic();}
+		));
 	}
 };
 
