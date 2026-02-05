@@ -33,6 +33,8 @@ struct MIDI_CV_MTS_ESP : Module {
 	midi::InputQueue midiInput;
 	dsp::MidiParser<16> midiParser;
 
+	float noteOnRetuning[128];
+	bool retuneNoteOnOnly;
 	MTSClient *mtsClient = 0;
 
 	MIDI_CV_MTS_ESP() {
@@ -51,6 +53,10 @@ struct MIDI_CV_MTS_ESP : Module {
 		configOutput(CONTINUE_OUTPUT, "Continue trigger");
 		configLight(CONNECTED_LIGHT, "MTS-ESP connected");
 		
+		for (int i = 0; i < 128; i++)
+			noteOnRetuning[i] = 0.f;
+		retuneNoteOnOnly = false;
+		
 		mtsClient = MTS_RegisterClient();
 	}
 
@@ -59,6 +65,9 @@ struct MIDI_CV_MTS_ESP : Module {
 	}
 
 	void onReset() override {
+		for (int i = 0; i < 128; i++)
+			noteOnRetuning[i] = 0.f;
+		retuneNoteOnOnly = false;
 		midiParser.reset();
 		midiInput.reset();
 	}
@@ -69,8 +78,13 @@ struct MIDI_CV_MTS_ESP : Module {
 		
 		midi::Message msg;
 		while (midiInput.tryPop(&msg, args.frame)) {
-			if (msg.getStatus() == 0x9 && msg.getValue() > 0 && MTS_ShouldFilterNote(mtsClient, msg.getNote(), -1))
-				continue;
+			if (msg.getStatus() == 0x9 && msg.getValue() > 0) { // note on
+				int8_t note = msg.getNote();
+				if (MTS_ShouldFilterNote(mtsClient, note, -1))
+					continue;
+				noteOnRetuning[note] = mtsClient ? MTS_RetuningInSemitones(mtsClient, note, -1) : 0.f;
+			}
+			
 			midiParser.processMessage(msg);
 		}
 
@@ -84,7 +98,8 @@ struct MIDI_CV_MTS_ESP : Module {
 		outputs[RETRIGGER_OUTPUT].setChannels(midiParser.channels);
 		for (uint8_t c = 0; c < midiParser.channels; c++) {
 			float note = midiParser.notes[c];
-			if (mtsClient) note += MTS_RetuningInSemitones(mtsClient, midiParser.notes[c], -1);
+			if (retuneNoteOnOnly) note += noteOnRetuning[midiParser.notes[c]];
+			else if (mtsClient) note += MTS_RetuningInSemitones(mtsClient, midiParser.notes[c], -1);
 			uint8_t wheelChannel = midiParser.getWheelChannels() == 1 ? 0 : c;
 			outputs[PITCH_OUTPUT].setVoltage((note - 60.f + midiParser.getPw(wheelChannel) * midiParser.pwRange) / 12.f, c);
 			outputs[GATE_OUTPUT].setVoltage(midiParser.gates[c] ? 10.f : 0.f, c);
@@ -110,7 +125,6 @@ struct MIDI_CV_MTS_ESP : Module {
 		outputs[CONTINUE_OUTPUT].setVoltage(midiParser.continuePulse.isHigh() ? 10.f : 0.f);
 		
 		midiParser.processPulses(args.sampleTime);
-
 	}
 
 	void processBypass(const ProcessArgs& args) override {
@@ -120,6 +134,7 @@ struct MIDI_CV_MTS_ESP : Module {
 
 	json_t* dataToJson() override {
 		json_t* rootJ = midiParser.toJson();
+		json_object_set_new(rootJ, "retuneNoteOnOnly", json_boolean(retuneNoteOnOnly));
 		json_object_set_new(rootJ, "midi", midiInput.toJson());
 		return rootJ;
 	}
@@ -129,6 +144,10 @@ struct MIDI_CV_MTS_ESP : Module {
 		midiParser.pwRange = 0;
 
 		midiParser.fromJson(rootJ);
+		
+		json_t* retuneNoteOnOnlyJ = json_object_get(rootJ, "retuneNoteOnOnly");
+		if (retuneNoteOnOnlyJ)
+			retuneNoteOnOnly = json_boolean_value(retuneNoteOnOnlyJ);
 
 		json_t* midiJ = json_object_get(rootJ, "midi");
 		if (midiJ)
@@ -259,6 +278,10 @@ struct MIDI_CV_MTS_ESPWidget : ModuleWidget {
 
 		menu->addChild(new MenuSeparator);
 
+		menu->addChild(createBoolPtrMenuItem("MTS-ESP retuning note-nn only", "", &module->retuneNoteOnOnly));
+		
+		menu->addChild(new MenuSeparator);
+		
 		menu->addChild(createMenuItem("Reset MIDI (Panic)", "",
 			[=]() {module->midiParser.panic();}
 		));
